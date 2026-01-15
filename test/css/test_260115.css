@@ -1,3 +1,4 @@
+@import url(pretendard.css);
 /************************* 시작 : 태그의 초기화 ***********************/
 h1,h2,h3,h4,h5,h6{
     font-weight: inherit;
@@ -12,3 +13,25 @@ a{
     text-decoration: none;/*밑줄삭제*/
 }
 /************************* 종료 : 태그의 초기화 ***********************/
+/************************* 시작 : 기본스타일 ***********************/
+body{
+    font-family: 'pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+.wrapper{
+    width: 1260;
+    margin: 0 auto;
+}
+/************************* 종료 : 기본스타일 ***********************/
+
+.share{
+    text-align: center;
+}
+.share h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
