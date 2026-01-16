@@ -1,4 +1,13 @@
-
+h1,h2,h3,h4,h5,h6{
+    font-weight: inherit;
+    font-size: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+/************** 종료 - 태그 초기화 **************/
+/************** 시작- 웹폰트정의 **************/
 @font-face {
 	font-family: 'pretendard';
 	font-weight: 900;
@@ -79,3 +88,74 @@
          url(../fonts/Pretendard-Thin.woff2) format('woff2'), 
          url(../fonts/Pretendard-Thin.woff) format('woff');
 }
+
+/************** 종료 - 웹폰트정의 **************/
+/************** 시작 - 기본스타일 **************/
+body{
+    font-family: 'pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d3d3d;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto; /* 가운데정렬 */
+}
+/************** 종료 - 기본스타일 **************/
+
+.visual{
+    background: url(../images/lh_visual2.jpg) no-repeat center center / cover;
+    height: 507px;
+    color: #fff;
+    margin: 83px 0 0 0;
+}   
+.visual h2{
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center; 
+    padding: 169px 0 0 0;
+}
+
+.work .tit{
+    text-align: center;
+}
+.work .tit h2{
+   font-weight: 700;
+   color: #0067db;
+   margin: 168px 0 0 0;
+}
+.work .tit .sub_tit{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 67px 0 27px 0 ;
+}
+.work h3{
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 83px 0 5px 0;
+}
+.work .photo{
+    margin: 25px 0 0 0;
+}
+
+.esg{
+    background: #f4f4f4;
+    margin: 106px 0 150px 0;
+    height: 492px;
+    text-align: center;
+
+}
+.esg h2{
+    font-weight: 700;
+    color: #ff0000;
+    padding: 146px 0 0 0;
+ }
+ .esg .sub_tit{
+     font-size: 40px;
+     font-weight: 700;
+     color: #1d1d1d;
+     margin: 22px 0 27px 0 ;
+ }
