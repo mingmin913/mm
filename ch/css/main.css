@@ -1,0 +1,131 @@
+@import url(fonts.css);
+@import url(common.css);
+
+.header{
+    height: 100px;
+}
+.header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .gnb ul{
+    display: flex; /* li를 좌우로 배치 */
+}
+.header .gnb ul li a{
+    display: block;
+    line-height: 100px; /* 행간을 header의 높이와 동이하게*/
+    padding: 0 32px;
+    font-size: 20px;
+    font-weight: 700px;
+    color: #1d1d1d;
+}
+
+.visual{
+    background: url(../imges/visual_bg.jpg) no-repeat center center / cover;
+    color: #ffffff;
+}
+.visual .wrapper{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 106px 0;
+}
+.visual h2{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 33px 0;
+}
+.biz{
+    margin: 278px 0 186px 0;
+}
+.biz .tit h2{
+    font-weight: 700;
+    font-size: 20px;
+    color: #2E008B;
+}
+.biz .tit p{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d ;
+    margin: 17px 0 0 0;
+}
+.biz .list{
+    margin: 60px 0 0 0;
+}
+.biz .list ul{
+    display: flex;/*li를 좌우 배치*/
+    justify-content: space-between;
+}
+.biz .list ul li{
+    width: 297px;
+}
+.biz .list ul li a{
+    display: block;
+}
+.biz .list ul li a .txt{
+    text-align: center;
+    margin:0 41px;
+}
+.biz .list ul li a .txt h3{
+    font-size: 40px;
+    color: #1d1d1d;
+    margin: 27px 0 11px 0;
+}
+.biz .list ul li a .txt span{
+    border: 1px solid #ccc;
+    margin: 24px 0 0 0;
+    display: block;
+    padding: 8px 0;
+}
+
+.brand{
+    background: url(../imges/brand_bg.jpg)no-repeat center center / cover;
+    color: #fff;
+    text-align: center;
+
+}
+.brand .wrapper{
+    height: 571px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* align-items: center; 가운데*/ /*align-items: flix-stat; 왼쪽*/
+}
+.brand h2{
+    font-size: 17px;
+    font-weight: 700;
+}
+.brand p{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 7px 0 24px 0;
+}
+.brand a{
+    /* display: inline-block; */
+    display: block;
+    border: 1px solid #fff;
+    padding: 10px 6px;  /*border 가 들어가면 padding*/
+}
+.footer{
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255,0.8);
+    padding: 109px 0;
+}
+.footer .f_nav ul .privacy{
+    font-weight: 700;
+}
+.footer .f_nav ul{
+    display: flex;
+    gap: 0 41px;
+}
+.footer .f_info{
+    margin: 40px 0 40px 0;
+    display: flex;
+    gap: 0 21px;
+}
