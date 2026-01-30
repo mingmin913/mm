@@ -8,7 +8,30 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="header"></header>
+        <header class="header">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><img src="images/logo.svg" alt="완도군 청산도"></a></h1>
+                <nav class="gnb">
+                    <!-- 클릭했을 떄 페이지가 이동하는 건 a태그고 메뉴가 열리는 기능이 작동하면 button 태그-->
+                    <button class="gnb_open"><span class="sr-only">메뉴열기</span></button>
+                    <div class="gnb_wrap">
+                        <ul>
+                            <li><a href="#n">청산도 소개</a></li>
+                            <li><a href="#n">관광안내</a></li>
+                            <li><a href="#n">추천여행</a></li>
+                            <li><a href="#n">커뮤니티</a></li>
+                        </ul>
+                    </div><!--gnb_wrap-->
+                    
+                </nav><!--gnb-->
+                <div class="util">
+                    <div class="weather">
+                        <strong>-2.9 ℃</strong>
+                        <span> 맑음</span>
+                    </div><!--weather-->
+                </div><!--util-->
+            </div><!--wrapper-->
+        </header><!--header-->
         <main class="container">
             <section class="visual">
                 <div class="wrapper">
@@ -16,8 +39,76 @@
                     <a href="#n" class="picture"><span>은하수<br>사진공방</span></a>
                 </div>
             </section><!--visual-->
-            <section class="culture"></section><!--culture-->
-            <section class="tour"></section><!--tour-->
+            <section class="culture">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>청산도 일상 풍경</h2>
+                        <p>푸른 섬이 건네는 다정한 안부, 오늘 청산도의 풍경은 '평온'입니다</p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/culture01.jpg" alt=""></div>
+                                    <h3><span>1년 뒤 감동이 배달되는 느림 우체통</span></h3>
+                                    <p>느린걸음 느린카페에는 보내고 싶은 달(月)에 편지를 보낼 수 있는 12개의 느림보 우체통이 카페 안밖에 있습니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/culture02.jpg" alt=""></div>
+                                    <h3><span>미로 속 미로</span></h3>
+                                    <p>속도를 내지 못하게 길마저 구불구불 돌아가라 한다. 이곳에선 잠시 길을 잃고 헤매는 것도 좋겠다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/culture03.jpg" alt=""></div>
+                                    <h3><span>도락리 아트갤러리</span></h3>
+                                    <p>미로길을 빠져나와 도청항 뒷골목으로 들어서면 11코스의 끝에 안통길이 나타납니다.</p>
+                                </a>
+                            </li>   
+                        </ul>
+                    </div>
+                    <a href="#n" class="more"><span>더보기</span></a>
+                </div>
+            </section><!--culture-->
+            <section class="tour">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>느리게 흐르는 섬, 청산도에서 찾은 세 가지 쉼표</h2>
+                    </div>
+                    <div class="list">
+                        <ul><!--tour01라고 부르거나 또는 라고 불림-->
+                            <li class="tour01 active">
+                                <a href="#n">
+                                    <h3>청산진성</h3>
+                                    <p>청산진성터에 오르면 청산도의 아름다운 풍경이 마치 파노라마처럼 펼쳐집니다.</p>
+                                </a>
+                            </li>
+                            <li class="tour02">
+                                <a href="#n">
+                                    <h3>고인돌</h3>
+                                    <p>청산진성을 따라 읍리로 들어서면 인고의 세월을 묵묵히 괴고 있는 청동기 시대 대표적인 무덤입니다.</p>
+                                </a>
+                            </li>
+                            <li class="tour03">
+                                <a href="#n">
+                                    <h3>숭모사</h3>
+                                    <p>숭모사는 김류선생의 학행을 추모하기 위하여 세웠다는 서당입니다.</p>
+                                </a>
+                            </li>
+                            <li class="tour04">
+                                <a href="#n">
+                                    <h3>백련암</h3>
+                                    <p>청산도에 있는 유일한절로 오랜 절의 역사와 함께 동백나무 군락이 특별한 경치를 자아냅니다.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!--list-->
+                        <a href="#n" class="more"><span>더보기</span></a>
+                </div><!--wrapper-->
+            </section><!--tour-->
             <section class="community"></section><!--community-->
         </main>
         <footer class="footer"></footer>
