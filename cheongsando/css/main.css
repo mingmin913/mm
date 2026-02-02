@@ -307,6 +307,7 @@
                     border-radius: 50px;
                     padding: 17px;
                     width: 27px;
+                    background-size: 9px;
                 }
                 .culture .more::after{
                     right: 13px;
