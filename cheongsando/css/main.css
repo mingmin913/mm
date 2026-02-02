@@ -149,7 +149,7 @@
                 }
                 .visual h2 img{
                     width: 80%; /*img를 감싸는 h2 넓이의 80%*/
-                    max-width: 400; /* 최대넓이 제한*/
+                    max-width: 400px; /* 최대넓이 제한*/
                 }
                 .visual .picture{
                     width: 108px;
@@ -283,7 +283,7 @@
                     display: none;/*모바일에서 숨김*/
                 }
                 .culture .list{
-                    margin: 134 px 0 0 0;
+                    margin: 134px 0 0 0;
                 }
                 .culture .list ul{
                     flex-direction: column; /*flex유지 아래방향으로 전환*/
@@ -443,7 +443,7 @@
                     display: block; /*pc에서는 줄바꿈 안함*/
                 }
                 .tour .list{
-                    margin: 37 px 0 0 0;
+                    margin: 37px 0 0 0;
                     overflow-x: auto;
                 }
                 .tour .list ul{
