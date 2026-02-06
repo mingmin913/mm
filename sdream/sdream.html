@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--외부라이브러리 파일을 먼저 불러야함-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <!--내가 만든 파일은 나중에 부름-->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>삼성꿈장학재단</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header"></header>
+        <main class="container">
+            <section class="visual">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide pop1">
+                                <div class="wrapper">
+                               <!-- <strong></strong> 위에 영어 적혀있으면--> 
+                                    <h2>꿈을 키우는 나눔, 함께 만드는 내일</h2>
+                                </div>
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <li class="swiper-slide pop2">
+                                <div class="wrapper">
+                                    <h2>당신의 꿈이 대한민국의 미래가 됩니다</h2>
+                                </div>
+                             </li> 
+                             <li class="swiper-slide pop3">
+                                <div class="wrapper">
+                                    <h2>꿈을 향한 발걸음, 우리가 함께 걷습니다 </h2>
+                                </div>
+                             </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        </ul>
+                    </div>
+                    <divc class="scroll"><span>SCROLL DOWN</span></div>
+            </section><!--visual-->
+            <section class="biz"></section><!--biz-->
+            <section class="new"></section><!--new-->
+            <section class="webzine"></section><!--webzine-->
+            <section class="service"></section><!--service-->
+        </main>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
