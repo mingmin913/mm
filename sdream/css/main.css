@@ -374,6 +374,31 @@
                 }
            
 }
+.new{
+    background-color: #F5F5F5;
+    margin: 162px 0 0 0;
+    padding: 102px 0 111px 0;
+}
+.new .tit h2{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #2E3138;
+}
+.new .list{
+    margin: 32px 0 0 0;
+}
+.new .list ul li+li{
+    margin-top: 100px;
+}
+
+.new .list ul li a{
+    display: flex;
+    padding: 18px 40px 18px 40px;
+    background-color: #fff;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.1);
+}
 .footer{
     margin: 1000px 0 0 0;
 }
