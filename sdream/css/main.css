@@ -240,17 +240,13 @@
                         }
                         .biz .tit h2{
                             font-size: 24px;
-                            margin: 0 0 31px 0;
                         }
                         .biz .tit h2 br{
                             display: none; /*줄바꿈 삭제*/
                         }
                         .biz .list{
                             width: auto;
-                            /* 원래 속성대로 넓이를 갖음
-                               block 요소면 100% 들어감
-                               그냥 100%하면 안되나? - margin을 좌우로 줘버리면 늘어남*/
-                            margin: ;
+                            margin: 31px 0 0 0;
                         }
                         .biz .list ul{
                             flex-wrap: nowrap; /*2줄 이상 허용 안함*/
@@ -377,7 +373,10 @@
 .new{
     background-color: #F5F5F5;
     margin: 162px 0 0 0;
-    padding: 102px 0 111px 0;
+    padding: 111px 0 111px 0;
+}
+.new .wrapper{
+    position: relative; /*more 정렬의 기준*/
 }
 .new .tit h2{
     font-size: 40px;
@@ -388,17 +387,443 @@
 .new .list{
     margin: 32px 0 0 0;
 }
+
+/*
+     <ul>
+        <li></li>     --- (x) 만 위에 있는 li라 해당 사항 없음
+        <li></li>     ---(o) 위에 li가 있고 다음에 나오는li라 li + li 선택가능
+        <li></li>     --- (o) 선택가능
+        <li></li>     ---(o) 선택가능
+     </ul>
+*/
 .new .list ul li+li{
-    margin-top: 100px;
+    margin-top: 6px;
 }
 
 .new .list ul li a{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 18px 40px 18px 40px;
     background-color: #fff;
     border: 1px solid #CCCCCC;
     box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.1);
 }
+.new .list ul li a:hover{
+    background-color: #4E6187;
+    color: #fff;
+}
+.new .list ul li a strong{
+    background-color: #1F3D7B;
+    color: #fff;
+    padding: 4px 15px 4px 15px;
+    border-radius: 10px;
+}
+.new .list ul li.sch a strong{
+    background-color: #2250A5;
+}
+.new .list ul li a h3{
+    font-size: 20px;
+    font-weight: 400;
+    color: #2E3138;
+    width: calc(100% - 212px);
+    /*84 + 130 = 214
+     한줄제한 */
+     white-space: nowrap;
+     overflow: hidden;
+}
+.new .list ul li a:hover h3{
+    color: #fff;
+}
+.new .more{
+    position: absolute; /* wrapper를 기준으로 정렬*/
+    right: 13px;
+    top: 14px;
+}
+.new .more a{
+    display: block;
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+    padding: 2px 33px 2px 15px;
+    position: relative; /*after 정렬의 기준*/
+}
+.new .more a:hover{
+    border-color: #2250A5;
+    background-color: #2250A5;
+    color: #fff;
+}
+.new .more a::after{
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 14px;
+    top: 8px;
+    width: 12px; /*아이콘 사이즈*/
+    height: 12px;
+    background: url(../images/more.svg) no-repeat center center / contain;
+    transition: transform 1s;
+}
+.new .more a:hover::after{
+    background-image: url(../images/more_w.svg);
+    transform: rotate(360deg);
+}
+@media screen and (max-width:768px){
+                    .new{
+                        margin: 79px 0 0 0;
+                        padding: 127px 0 89px 0;
+                    }
+                    .new .tit h2{
+                        font-size: 24px;
+                        margin: 6px 0 0 0;
+                    }
+                    .new .list{
+                        margin: 34px 0 0 0;
+                    }
+                    .new .list ul li{
+                       border-bottom: 1px solid rgba(204, 204, 204, 0.8);
+                    }
+                    .new .list ul li:first-child{
+                        border-top  : 1px solid rgba(204, 204, 204, 0.8);
+                    }
+                    .new .list ul li+li{
+                        margin-top: 0;
+                    }
+                    .new .list ul li a{
+                        padding: 10px 0 10px 0;
+                        background-color: transparent; /*transparent 투명하게*/
+                        border: none;
+                        box-shadow: none;
+                    }
+                    .new .list ul li a:hover{
+                        background-color: transparent;
+                        color: inherit;
+                    }
+                    .new .list ul li a strong{
+                        display: none; /*모바일에서 숨김*/
+                    }
+                    .new .list ul li a h3{
+                        font-size: 16px;
+                        width: calc(100% - 106px);
+                    }
+                    .new .list ul li a:hover h3{
+                        color: inherit;
+                    }
+                    .new .more{
+                        position: relative ; /* absolute 해제*/
+                        right: auto; /* 아예 안준것 처럼 해제*/
+                        top: auto;
+                        margin: 18px 0 0 0;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .new .more a{
+                        padding: 1px 29px 1px 15px;
+                        background-color: #2250A5;
+                        color: #fff;
+                    }
+                    .new .more a::after{
+                        right: 14px;
+                        top: 8px;
+                        width: 12px; /*아이콘 사이즈*/
+                        height: 12px;
+                        background: url(../images/more_w.svg) no-repeat center center / contain;
+                    }
+                  
+}/*@media*/
+.webzine{
+    background-color: rgba(34, 80, 165, 0.7);
+    color: #fff;
+    padding: 164px 0 158px 0;
+}
+.webzine .wrapper{
+    position: relative;
+}
+.webzine .tit strong{   
+    color: #fff;
+}
+.webzine .tit h2{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 10px 0 0 0;
+}
+.webzine .list{
+    margin: 45px 0 0 0;
+}
+.webzine .list .swiper-slide a{
+    display: block;
+    background-color: #fff;
+    color: #515662;
+    border-radius: 20px; 
+}
+.webzine .list .swiper-slide a .photo{
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+    height: 232px;
+}
+.webzine .list .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;   
+}
+.webzine .list .swiper-slide a:hover .photo img{ /*hover는 여기에.. */
+    transform: scale3d(1.125, 1.125, 1);
+}
+.webzine .list .swiper-slide a .txt{
+    padding: 41px 36px 44px 45px;
+}
+.webzine .list .swiper-slide a .txt strong{
+    font-weight: 800;
+    color: #2250A5;
+    display: block;
+    /*한줄 제한*/
+    white-space: nowrap;
+    overflow: hidden;  
+}
+.webzine .list .swiper-slide a .txt h3{
+    font-size: 20px;
+    font-weight: 800;
+    color: #2E3138;
+    margin: 4px 0 17px 0;
+    line-height: 1.3;
+    height: 2.6em; /*행간 * 줄수 = 단위 em*/
+    overflow: hidden;
+
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /*두줄*/
+}
+.webzine .list .swiper-slide a .txt p{
+    line-height: 1.5;
+    height: 4.5em; /*행간 * 줄수 = 단위 em*/
+    overflow: hidden;
+
+    
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /*세줄*/
+}
+.webzine .ctrl_wrap{
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    display: flex; /* prey-next-more 좌우로 정렬*/
+    gap: 0 6px;
+}
+.webzine .ctrl_wrap button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: url(../images/prev1.svg) no-repeat center center;
+    
+}
+/* .webzine .ctrl_wrap button:hover{  
+    마우스 오버 했을 때 그리고 hover:not(.swiper-button-disabled) 넣으면 오버할 때 백그라운드 색 안나옴
+    border-color: #fff;
+    background-color: #fff;
+    background-image: url(../);
+} */
+.webzine .ctrl_wrap button.prev{
+    transform: rotate(180deg);
+}
+.webzine .ctrl_wrap button.swiper-button-disabled{
+    opacity: 0.5;
+    cursor: default; /*마우스 손바닥모양 안 나오게*/
+}
+.webzine .ctrl_wrap button .more{
+    margin: 0 0 0 6px;
+}
+.webzine .ctrl_wrap .more a{
+    display: block;
+    height: 32px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 4px 36px 0 16px;
+    position: relative; /*after 정렬의 기준*/
+}
+/* .webzine .ctrl_wrap .more a:hover{
+    얘도 오버했을 때
+} */
+.webzine .ctrl_wrap .more a::after{
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 9px;
+    width: 12px; /*아이콘사이즈*/
+    height: 12px;
+    background: url(../images/more_w.svg) no-repeat center center / contain;
+}
+/* .webzine .ctrl_wrap .more a:hover::after{
+    background-image: url(../); 이건 오버 했을 때 플러스 이모티콘 변경
+    transform: rotate(360deg);
+} */
+@media screen and (max-width:768px){
+                        .webzine{
+                            padding: 92px 0 86px 0;
+                        }
+                        .webzine .tit h2{
+                            font-size: 24px;
+                        }
+                        .webzine .list{
+                            margin: 8px 0 0 0;
+                        }
+                        .webzine .list .swiper-slide{
+                            width: 250px;
+                        }
+                        .webzine .list .swiper-slide a{
+                            border-radius: 10px; 
+                        }
+                        .webzine .list .swiper-slide a .photo{
+                            border-radius: 10px 10px 0 0;
+                            height: 155px;
+                        }
+                        .webzine .list .swiper-slide a .txt{
+                            padding: 18px 16px 33px 15px;
+                        }
+                        .list .swiper-slide a .txt h3{
+                            font-size: 20px;
+                            margin: 4px 0 17px 0;
+                        }
+                        .webzine .ctrl_wrap{
+                            position: relative; /*absolute 해제*/
+                            right: auto;
+                            top: auto;
+                            justify-content: center;
+                            margin: 22px 0 0 0;
+                        }
+                        .webzine .ctrl_wrap button{
+                           display: none;
+                        }
+                        .webzine .ctrl_wrap .more a{
+                            height: 26px;
+                            border: 1px solid #fff;
+                            padding: 1px 29px 0 15px;
+                        }
+                        .webzine .ctrl_wrap .more a::after{
+                            right: 11px;
+                            top: 8px;
+                            width: 10px; /*아이콘사이즈*/
+                            height: 10px;
+                            background: url(../images/more_w.svg) no-repeat center center / contain;
+                        }
+}/*@media*/
+
+.service{
+    margin: 114px 0 101px 0 ;
+}
+.service .tit strong{
+    font-weight: 800;
+    color: #2250A5;
+}
+.service .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #2E3138;
+    margin: 10px 0 0 0;
+}
+.service .list{
+    margin: 32px 0 0 0;
+}  
+.service .list ul{
+    display: flex; /*li를 좌우 배치*/
+    justify-content: space-between;
+}  
+.service .list ul li{
+    width: calc(33.33% - 16px) ;
+    /*
+        100% / 한줄에보이는li갯수 - 한줄의여백의합 / 한줄에보이는li갯수
+        100% / 3 - (24+24) / 3
+        33.33% - 16px
+    */
+}
+.service .list ul li a{
+    display: block;
+    background-color: rgba(34, 80, 165, 0.1);
+    padding: 25px 0 31px 40px;
+    position: relative; /*after 정렬의 기준*/
+}
+.service .list ul li a:hover{
+    background-color: rgba(31, 61, 123, 0.3);
+    box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.25);
+}
+.service .list ul li a::after{
+    content: ""; /*필수값*/
+    position: absolute;
+    right: 25px;
+    top: 41px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #fff url(../images/more_b.svg) no-repeat center center / 10px;
+}
+/* .service .list ul li a::after{ 오버햇을 때 변하는 거
+    background-color: ;
+    transition: transform 1s;
+} */
+.service .list ul li a strong{
+    font-weight: 400;
+    color: #2250A5;
+}
+.service .list ul li a h3{
+    font-size: 20px;    
+    font-weight: 800;
+    line-height: 1.3;
+    color: #2E3138;
+}
+@media screen and (max-width:768px){
+                        .service{
+                            margin: 71px 0 104px 0 ;
+                        }
+                        .service .tit h2 {
+                            font-size: 24px;
+                            margin: 6px 0 0 0;
+                        }
+                        .service .list{
+                            margin: 29px 0 0 0;
+                        }  
+                        .service .list ul{
+                           flex-direction: column;
+                           gap: 14px 0;
+                        }  
+                        .service .list ul li{
+                            width: auto;
+                        }
+                        .service .list ul li a{
+                            padding: 7px 40px 12px 40px;
+                            position: relative; /*after 정렬의 기준*/
+                        }
+                        .service .list ul li a:hover{
+                            background-color: rgba(31, 61, 123, 0.3);
+                            box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.25);
+                        }
+                        .service .list ul li a::after{
+                            content: ""; /*필수값*/
+                            position: absolute;
+                            right: 25px;
+                            top: 41px;
+                            width: 26px;
+                            height: 26px;
+                            border-radius: 50%;
+                            background: #fff url(../images/more_b.svg) no-repeat center center / 10px;
+                        }
+                        /* .service .list ul li a::after{ 오버햇을 때 변하는 거
+                            background-color: ;
+                            transition: transform 1s;
+                        } */
+                        .service .list ul li a strong{
+                            font-weight: 400;
+                            color: #2250A5;
+                        }
+                        .service .list ul li a h3{
+                            font-size: 20px;    
+                            font-weight: 800;
+                            line-height: 1.3;
+                            color: #2E3138;
+                        }
+}/*@media*/
 .footer{
     margin: 1000px 0 0 0;
 }
