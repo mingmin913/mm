@@ -302,6 +302,7 @@
 }
 .visual .swiper-slide {
     height: 100vh; /*브라우저 높이*/
+    min-height: 500px;
     background: url(../images/visual_bg01.jpg) no-repeat center /cover;
     color: #fff;
     display: flex; /* wrapper 를 아래로 정렬*/
@@ -793,29 +794,14 @@
                         }
                         .service .list ul li a{
                             padding: 7px 40px 12px 40px;
-                            position: relative; /*after 정렬의 기준*/
-                        }
-                        .service .list ul li a:hover{
-                            background-color: rgba(31, 61, 123, 0.3);
-                            box-shadow: 3px 3px 3px 0 rgba(0, 0, 0, 0.25);
                         }
                         .service .list ul li a::after{
-                            content: ""; /*필수값*/
-                            position: absolute;
-                            right: 25px;
-                            top: 41px;
+                            right: 27px;
+                            top: 21px;
                             width: 26px;
                             height: 26px;
                             border-radius: 50%;
-                            background: #fff url(../images/more_b.svg) no-repeat center center / 10px;
-                        }
-                        /* .service .list ul li a::after{ 오버햇을 때 변하는 거
-                            background-color: ;
-                            transition: transform 1s;
-                        } */
-                        .service .list ul li a strong{
-                            font-weight: 400;
-                            color: #2250A5;
+                            background-size: 11px;
                         }
                         .service .list ul li a h3{
                             font-size: 20px;    
@@ -825,5 +811,66 @@
                         }
 }/*@media*/
 .footer{
-    margin: 1000px 0 0 0;
+    padding: 239px 0 0 0;
 }
+.footer .wrapper{
+    position: relative; /*top 정렬의 기준*/
+}
+.footer .top{
+    position: absolute; /**/
+    right: 0;
+    top: -103px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #A8BFE8 url(../images/prev2.svg) no-repeat center center;
+}
+/* .footer .top:hover{
+    background-color: #fff;
+    background-image: url(../);
+} */
+
+.footer .f_nav ul{
+    display: flex; /* li를 좌우 배치 */
+    gap: 6px     35px;
+    flex-wrap: wrap; /* 여러줄 허용*/
+}
+.footer .f_nav ul li{
+    position: relative; /* after 정렬의 기준*/
+}
+.footer .f_nav ul li.imp{
+    color: #2E3138;
+    font-weight: 800;
+}
+.footer .f_nav ul li::after{
+    content: ""; /*afrer/before 필수값*/
+    position: absolute;
+    right: -17px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(204, 204, 204, 0.8);
+}
+.footer .f_nav ul li:last-child::after{
+    display: none;
+}
+.footer .f_info{
+    margin: 33px 0;
+    display: flex;
+    flex-wrap: wrap; /* 두줄허용*/
+    gap: 0;
+}
+@media screen and (max-width:768px){    
+                        .footer{
+                            padding: 173px 0 0 0;
+                        }
+                     
+                        .footer .top{
+                            top: -70px;
+                        }
+                        
+                        .footer .f_info{
+                            margin: 32px 0;
+                        }
+
+}/*@media*/
