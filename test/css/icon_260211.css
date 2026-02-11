@@ -1,0 +1,29 @@
+@import url(common_full.css);
+
+section{
+    margin: 100px 0;
+}
+section h2{
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-tit);
+    line-height: var(--line-height-tit);
+    color: var(--color-tit);
+}
+
+.btn_wrap button{
+    font-size: clamp(1.6rem, 2.5vw, 3rem); /* button에서는 1em */
+    font-weight: var(--font-weight-tit);
+    border: 1px solid var(--color-default);
+    border-radius: 1.2em; /*31px*/
+    padding: 0.1em 1.7667em 0.1333em 0.9333em;
+    position: relative; /* after 정렬의 기준*/
+}
+.btn_wrap button::after{
+    content: "";
+    position: absolute;
+    right: 1.2em;
+    top: 0.48em;
+    width: 0.4333em;
+    height: 0.8em;
+    background: url(../images/more.svg) no-repeat center center / contain;
+}
