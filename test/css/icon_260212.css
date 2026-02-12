@@ -218,7 +218,7 @@ section h2 + p{
 .png_bg .list .gnb_open{
     width: clamp(55px, 20vw, 86px);
     height: clamp(55px, 20vw, 86px);
-    background: #fff  url(../images/icon_menu.png) no-repeat center center / 70%; /*마지막에 아이콘의*/
+    background:  url(../images/icon_menu.png) no-repeat center center / 70%; /*마지막에 아이콘의*/
     /* 넓이 높이의 몇% -  background 사이즈가*/
 }
 .png_bg .list .gnb_open:hover{
@@ -226,4 +226,25 @@ section h2 + p{
 }
 .png_bg .list .gnb_open span{
     display: none;
+}
+
+.svg_path .list{
+    display: flex;
+    align-items: center;
+    gap: 0 50px;
+}
+.svg_path .list .more{
+    display: flex; /* span - i 좌우정렬*/
+    gap: 0 11px;
+    border: 1px solid var(--color-main);
+    color: var(--color-main);
+    fill: var(--color-main);
+    font-size: clamp(1.6em, 2.5vw, 3rem); /*글자크기만 rem 단위 사용*/
+    font-weight: var(--font-weight-tit);
+    border-radius: 1.3333em;
+    padding: 0.3333em 2em 0.4em 1.3667em ;
+    position: relative;
+}
+body{
+    margin: 0 0 500px 0;
 }
