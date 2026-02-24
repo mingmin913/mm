@@ -16,12 +16,23 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s;
 }
 .header .logo a{
     display: block;
     width: max(121px,calc(var(--header-h) * 1.78 ));
     height: max(19px, calc( var(--header-h) * 0.28));
     background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+.header.fixed{
+    background-color: #fff;
+    color: var(--font-color-tit);
+    fill: var(--font-color-tit);
+    /* border-bottom: 1px solid #ccc; */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+.header.fixed .logo a{
+    background-image: url(../images/logo.svg);
 }
 @media screen and (min-width:1025px){
     /* .header는 pc의 모바일이 로고빼고 스타일이 완전 달라서 pc버전/모바일 스타일을 
@@ -63,15 +74,30 @@
                     transition: 0.3s;
                 }
                 .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-                    display: none; /* 2차메뉴 - 무조건 absolute*/
+                    /* 2차메뉴 - 무조건 absolute*/
+                    display: block !important;
+                    /* !important <- 선택자의 우선순위와 상관없이 무조건 이 속성을 우선 적용
+                        너무 자주 쓰지마셈. 걍 잊어버리기*/
                     position: absolute;
                     left: 0;
                     top: var(--header-h);
                     width: 100%;
-                    height: 282px;
+                    height: 0;
                     text-align: center;
-                    padding: 24px 0 0 0;
+                    padding: 0;
                     border-right: 1px solid #ccc;
+                    opacity: 0;
+                    transition: 0.3s;
+                    overflow: hidden;
+                    /*
+                        display: none;으로 숨겼다가 display: block; 보이게 하는 요소는 
+                        transition이 안들어감
+                    */
+                }
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                    padding: 24px 0 0 0;
+                    height: 282px;
+                    opacity: 1;
                 }
                  .header .gnb .gnb_wrap ul.depth1 > li:first-child > ul.depth2{
                     /*2차 메뉴*/
@@ -100,6 +126,7 @@
                  .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover > span::after{
                     width: 100%;
                  }
+                 
                 .header .uitl{
                     display: flex;
                 }
@@ -116,13 +143,14 @@
                 .header .gnb .gnb_wrap .gnb_close{
                     display: none; /* 모바일에서만 나옴*/
                 }
+
             
                 /* 메뉴에 마우스르 얼럈을 때 mwnu_over*/
                  .header.menu_over{
                     color: var(--font-color-tit);
                     fill: var(--font-color-tit);
                  }  
-                .header.menu_over::before{
+                .header::before{
                     content: "";
                     position: absolute; /*header를 기준으로 정렬*/
                     left: 0;
@@ -131,7 +159,13 @@
                     /*지하 1층  - 기본적으로 position 앏으면 1층 있느먄 2층 부터 시작*/
                     width: 100%;
                     height: 382px;
-                    background-color: #fff  ;
+                    background-color: #fff;
+                    transform: translateY(-110%); 
+                    /* 자기 높이보다 조금 더 많은 값을 위로 이동 - 그럼 안보임*/
+                    transition: 0.3s;
+                }
+                .header.menu_over::before{
+                    transform: translateY(0);
                 }
                 .header.menu_over::after{
                     content: "";
@@ -145,8 +179,8 @@
                 .header.menu_over .logo a{
                     background-image: url(../images/logo.svg);
                 }
-                 .header.menu_over .gnb .gnb_wrap ul.depth1 > li{
-                       min-width: 169px;
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li{
+                    min-width: 169px;
                 }
                 .header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a{
                     color: var(--color-main);
@@ -155,25 +189,159 @@
                 .header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a::after{
                     width: 100%;
                 }
-                .header.menu_over .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-                        display: block;
+              
+                .header .gnb .gnb_bg{
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100vh;
+                    z-index: -2;
+                    /* 메뉴에 흰색 bg를 z-index: -1로 줘서 그보다 아래*/
+                    background-color: rgba(0, 0, 0, 0);
+                    transform: translateY(-110%);
+                    transition: background-color 0.3s;
+                 }
+                 /*
+                    클래스 추가 전후에 변화는 transform,background-color 만 존재
+                    이때 transition를 background-color만 줌
+                    그럼 남은 하나 transform은 빨리 적용되고 나머지는 transition 시간만큼 천천히
+                 */
+                .header.menu_over .gnb .gnb_bg{
+                    background-color: rgba(0, 0, 0, 0.5);
+                    transform: translateY(0);
                 }
                
 }/*@media*/
-.header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-    display: none;
-}
-.header .uitl{
-    display: flex;
-}
-.header .uitl .search .search_open,
-.header .uitl .mypage{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-}
+@media screen and (min-width:1025px) and (max-width:1200px){ /*1200 ~ 1025 사이 일때만*/
+            .header.menu_over .gnb .gnb_wrap ul.depth1 > li{
+                min-width: 140px;
+            }
+}/*@media*/
+@media screen and (max-width:1024px){ /*1024 이하 일 때*/
+            .header{
+                padding-right: 0;
+            }
+            .header .gnb .gnb_open{
+                width: var(--header-h);
+                height: var(--header-h);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .header .gnb .gnb_open svg{
+                width: calc(var(--header-h) * 0.428571);
+                height: calc(var(--header-h) * 0.214285);
+            }
+            .header .gnb .gnb_wrap{
+                position: fixed;
+                right: 0;
+                top: 0;
+                z-index: 10;
+                width: 100%;
+                max-width: 500px;
+                height: 100vh;
+                background-color: #fff;
+                color: var(--font-color-tit);
+                fill: var(--font-color-tit);
+                transform: translateX(110%); /* .gnb_wrap 넓이보다 조금 더 많이 이동*/
+                transition: 0.3s;
+            }
+            /***** 메뉴가 열렸을 때*****/
+            .header.menu_open .gnb .gnb_wrap{
+                transform: translateX(0);
+            }
+            .header .gnb .gnb_wrap .gnb_logo{
+                position: absolute; /*gnb_wrap 기준으로 정렬 - ul.depth1를 제외한 absolute*/
+                left: var(--wrapper-margin);
+                top: 0;
+                height: var(--header-h);
+                width: max(121px,calc(var(--header-h) * 1.78 ));
+                background: url(../images/logo.svg) no-repeat left center / contain;
+            } 
+            .header .gnb .gnb_wrap ul.depth1{
+                margin: var(--header-h) 0 0 0;
+                height: calc(100% - var(--header-h));
+                padding: 15px 0 0 0;
+                overflow-y: auto;
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li > a{
+                font-family: var(--font-family-tit);
+                font-size: 20px;
+                display: block;
+                padding: 14px var(--header-h) 14px var(--wrapper-margin);
+                position: relative; /*애프터 정렬의 기준*/
+            }
+            .header .gnb .gnb_wrap ul.depth1 > li.open > a{
+                color: var(--color-main);
+                font-weight: var(--font-weight-bold);
+            }
+             .header .gnb .gnb_wrap ul.depth1 > li > a::after{
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: var(--header-h); /* 닫기 버튼과 넓이를*/
+                height: 100%; /*a랑 사이즈 동일*/
+                background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.65375 6.7075L0 1.05375L1.05375 0L5.65375 4.6L10.2537 0L11.3075 1.05375L5.65375 6.7075Z' fill='%231C1B1F'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+                transition: 0.3s;
+             }
+             .header .gnb .gnb_wrap ul.depth1 > li.open > a::after{
+                transform: rotate(180deg);
+                background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.65375 6.7075L0 1.05375L1.05375 0L5.65375 4.6L10.2537 0L11.3075 1.05375L5.65375 6.7075Z' fill='%236C4B43'/%3E%3C/svg%3E%0A");
+             }
+            .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+                display: none;
+                background-color: var(--color-bg);
+                padding: 20px var(--wrapper-margin) 20px calc(var(--wrapper-margin));
+            }
+            /* .header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2{
+                display: block;
+            } */
+            .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+                display: block;
+                padding: 6px 0 6px var(--wrapper-margin);
+            }
+            .header .gnb .gnb_wrap .gnb_close{
+                position: absolute; /**/
+                right: 0;
+                top: 0;
+                width: var(--header-h);
+                height: var(--header-h);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .header .gnb .gnb_wrap .gnb_close svg{
+                width: calc(var(--header-h) * 0.428571);
+                height: calc(var(--header-h) * 0.214285);
+            }
+            .header .gnb .gnb_bg{
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                transition: background-color 0.3s;
+                transform: translateX(110%);
+            }
+            .header.menu_open .gnb .gnb_bg{
+                background-color: rgba(0, 0, 0, 0.5);
+                transform: translateX(0);
+            }
+            .header.menu_open .gnb .gnb_bg{
+                display: block;
+            }
+            .header .uitl{
+                display: none;
+            }
+
+            
+}/*@media*/
+
 .visual{
     position: relative; /* ctrl_left 기준*/
 }
@@ -263,3 +431,7 @@
             display: none;
         }
 }/*@media*/
+
+.footer{
+    margin: 1000px 0 0 0;
+}
