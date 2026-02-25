@@ -13,7 +13,7 @@ body{
     word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈*/
 }
 .wrapper{
-    width: 1284px;
+    width: var(--wrapper-w);
     margin: 0 auto; /* 화면에 가운데 정렬 */
 }
 #wrap{
@@ -48,8 +48,10 @@ body{
     --font-size-subtit:32px;
     --font-size-subtit2: 24px;
     --wrapper-margin: 50px;
+    --wrapper-w: 1284px;
     --font-color-default: #231815;
     --font-color-tit: #231815;
+    --font-color-g:#ccc;
     --color-main: #6C4B43;
     --color-bg:#FAF9F5;
     --color-wite: #fff;
@@ -65,15 +67,19 @@ body{
         :root{
             --wrapper-margin: 30px;
             --header-h: 56px;
+            --font-size-tit: 40px;
+            --font-size-subtit:22px;
+            --font-size-subtit2: 20px;
         }
 
 } 
 @media screen and (max-width:768px){
-     :root{
+     :root{ 
             --font-size-default: 16px;
             --font-size-tit: 32px;
-            --font-size-subtit:24px;
-            --font-size-subtit2: 20px;
+            --font-size-subtit:20px;
+            --font-size-subtit2: 16px;
             --wrapper-margin: 16px;
+            --header-h: 56px;
         }
 }
