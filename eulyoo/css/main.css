@@ -182,11 +182,11 @@
                 .header.menu_over .gnb .gnb_wrap ul.depth1 > li{
                     min-width: 169px;
                 }
-                .header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a{
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li:hover > a{
                     color: var(--color-main);
                     font-weight: var(--font-weight-bold);
                 }
-                .header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a::after{
+                .header.menu_over .gnb .gnb_wrap ul.depth1 > li:hover > a::after{
                     width: 100%;
                 }
               
@@ -438,7 +438,7 @@
     justify-content: flex-end; ineer를 오른쪽으로 배치하기 위해 */
 }
 .book .inner{
-    height: 200px;
+    
     /* width: calc(50% + calc( var(--wrapper-w) / 2)); book 넓이의 50%로 들어감 */
     margin-left: calc(calc(100% - var(--wrapper-w)) / 2);
     /* 전체 넓이 100% - warpper의 넓이 = 그럼 양사이드 여백이 남은ㅁ
@@ -535,13 +535,13 @@
     display: block;
 }
 .book .btn_wrap{
-    position: absolute;
+    position: absolute; 
     left: 0;
     top: 253px;
     display: flex;
     gap: 0 6px;
 }
-.book .btn_wrap button{
+.book .btn_wrap button {
     width: 39px;
     height: 39px;
     border: 1px solid var(--font-color-tit);
@@ -549,13 +549,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    fill: var(--font-color-g);
+    color: var(--font-color-g);
 }
 .book .btn_wrap button.swiper-button-disabled{
     opacity: 0.5;
     cursor: default;
 }
-.book .btn_wrap button:not(.swiper-button-disabled):hover{
+.book .btn_wrap button:not(.swiper-button-disabled):hover {
     border-color: var(--color-main);
     background-color: var(--color-main);
     fill: #fff;
@@ -564,6 +564,7 @@
             .book .inner{
                 flex-direction: column;
             }
+            
             .book .tit h2 br{
                 display: none; /*줄 바꿈 없음*/
             }
@@ -580,8 +581,11 @@
             }
 }/*@media */
 @media screen and (max-width:768px){
+        .book .list .swiper-slide a .txt h3 strong{
+            font-size: var(--font-size-subtit);
+        }
         .book .list .swiper-slide {
-             width: 220px;
+            width: 220px;
         }
         .book .btn_wrap{
             display: none;
@@ -589,7 +593,6 @@
 }/*@media */
 .interview{
     background-color: rgba(244, 243, 243, 0.3);
-    margin: 343px 0 0 0;
     padding: clamp(167px, 20vw, 200px) 0 clamp(134px, 13vw, 134px) 0;
 }
 .interview .tit{
@@ -621,6 +624,7 @@
 }
 .interview .list ul li a{
     display: block;
+    position: relative; /* txt, over 정렬의 기준 */
 }
 .interview .list ul li a .photo{
     overflow: hidden;
@@ -637,17 +641,390 @@
     width: 100%;
     height: 50%;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+.interview .list ul li:hover a .photo::before{
+    opacity: 0;
 }
 /* 디자인상 뭐가 오든 상관없이 무조건 두번째 요소가 스타일이 다름*/
 .interview .list ul li:nth-child(2) a .photo{
-     border-radius: 0 50px 0 50px;
+    border-radius: 0 50px 0 50px;
 }
 .interview .list ul li a .photo img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
+    transition: filter 0.3s;
 }
+.interview .list ul li:hover a .photo img{
+    filter: grayscale(0);
+}
+.interview .list ul li a .txt{
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    bottom: 0;
+    z-index: 11;
+    width: 100%;
+    padding: 0 40px 19px 32px;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+/* .interview .list ul li:hover a .txt{
+    display: none;
+} */
+.interview .list ul li a .txt h3{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-subtit2);
+    line-height: var(--line-height-tit);
+}
+.interview .list ul li a .over{
+    position: absolute; /* a를 기준으로 정렬*/
+    left: 0;
+    bottom: -40px;
+    z-index: 12;
+    width: 93.2%;
+    background-color: var(--color-main);
+    border-radius: 50px 0 50px 0;
+    color: #fff;
+    fill: #fff  ;
+    padding: 41px 7.81%;
+    opacity:0;
+    /*갈색 박스가 밑에서 위로 움직이게 만드는 법*/
+    transform: translateY(30px); 
+    transition: opacity 0.3s, transform 0.3s;
+
+    /* transition: opacity 0.3s; 이건 그냥 나타나게 하는 방법*/
+}
+.interview .list ul li:nth-child(2) a .over{
+    border-radius:  0 50px 0 50px;
+}
+.interview .list ul li:hover a .over{
+    opacity: 1;
+    transform: translateY(0); /*<- 갈색 박스가 밑에서 위로 움직이게 만드는 법 */
+}
+.interview .list ul li a .over h3{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-subtit2);
+    line-height: var(--line-height-tit);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 19px 0;
+}
+.interview .list ul li a .over p{
+    /*두줄 제한*/
+    line-height: var(--line-height-default);
+    height:calc(var(--line-height-default) * 2em) ; /*행간 + 즐스 = 단위em*/
+    overflow: hidden;
+    word-break: normal; 
+    /* 단어별 줄바꿈 안하고 그냥 단어도 나눠서 들어가게 -- 가독성은 떨어져도 글자가 좌우 꽉참*/
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    /*잘 안씀 오류떠서*/    
+}
+@media screen and (max-width:768px){
+            .interview {
+                padding: 89px 0 94px 0;
+            }
+            .interview .tit{
+                text-align: left;
+            }
+            .interview .tit h2{
+                margin: 0;
+            }
+            .interview .tit p{
+                display: none;
+            }
+            .interview .list ul li{
+                width: calc(50% - 8px);
+            }
+            .interview .list ul li:nth-child(2) {
+                margin-top: 0;
+            }
+            .interview .list ul li:nth-child(3){
+                display: none;
+            }
+            .interview .list ul li a .photo{
+                height: 373px;
+                border-radius: 30px 0 30px 0;
+            }
+            .interview .list ul li:nth-child(2) a .photo{
+                border-radius: 30px 0 30px 0;   
+            }
+            .interview .list ul li a .photo::before{
+               display: none;
+            }
+            .interview .list ul li a .photo img{
+                filter: grayscale(0);
+            }
+            .interview .list ul li a .txt{
+               display: none;
+            }
+            .interview .list ul li a .over{
+                bottom: -28px;
+                border-radius: 30px 0 30px 0;
+                padding: 43px 8.33%;
+                opacity:1;
+                transform: translateY(0); 
+            }
+            .interview .list ul li:nth-child(2) a .over {
+                border-radius: 30px 0 30px 0;
+            }
+            .interview .list ul li a .over h3{
+                font-size: var(--font-size-subtit);
+                margin: 0 0 24px 0;
+            }
+            .interview .list ul li a .over p{
+                line-height: var(--line-height-default);
+                height:calc(var(--line-height-default) * 2em) ; /*행간 + 즐스 = 단위em*/
+                overflow: hidden;
+                word-break: normal; 
+
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                /*잘 안씀 오류떠서*/    
+            }
+}/*@media*/
+@media screen and (max-width:585px){
+            .interview .list ul li{
+                width: 100%;
+            }
+            .interview .list ul li:nth-child(2){
+                display: none;
+            }
+}/*@media*/
+
+.story{
+    padding: clamp(168px, 1.6vw ,168px) 0 clamp(140px, 15vw ,140px ) 0;
+}
+.story .wrapper{
+    position: relative; /* btn_wrap 정렬의 기준*/
+}
+.story .tit h2{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-tit);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0 0 26px 0;
+}
+/* .story .tit h2 p{
+
+} */
+.story .list{
+    margin: clamp(43px, 5.6vw ,56px) 0 0 0;
+}
+.story .list .swiper-slid{
+    width: 303px;
+}
+.story .list .swiper-slide a{
+    display: block;
+}
+.story .list .swiper-slide a .photo{
+    overflow: hidden;
+    height: 332px;
+}
+.story .list .swiper-slide.long a .photo{
+    height: 414px;
+}
+.story .list .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.story .list .swiper-slide a:hover .photo img{
+    transform: scale3d(1.125, 1.125, 1);
+}
+.story .list .swiper-slide a h3{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-subtit2);
+    line-height: var(--line-height-tit);
+    color: var(--font-color-tit);
+    margin: 0.667em 0 0 0;
+
+    /* 2줄 제한*/
+    line-height: var(--line-height-tit);
+    height: calc(var(--line-height-tit) * 2em);
+    overflow: hidden;
+    word-break: normal; /* 단어뱔 줄바꿈해제*/
+}
+.story .list .swiper-slide a h3 span{
+    background-image: linear-gradient(transparent calc(100% - 1px), var(--font-color-tit) 10px); /* 30px <- 이 값을 수정하여 밑줄 두께 조절 */
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left bottom;
+    transition: background-size 0.6s ease;
+}
+.story .list .swiper-slide a:hover h3 span{
+    background-size: 100% 100%;
+}
+.story .list .swiper-slide a p{
+    margin: 0.588em 0 0 0;
+    word-break: normal;
+
+    /* 3줄 제한*/
+    line-height: var(--line-height-default);
+    height: calc(var(--line-height-default) * 3em);
+    overflow: hidden;
+}
+.story .list .swiper-slide.long a p{
+    display: none;
+}
+.story .btn_wrap{
+    position: absolute; 
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 0 6px;
+}
+.story .btn_wrap button {
+    width: 39px;
+    height: 39px;
+    border: 1px solid var(--font-color-tit);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color-g);
+}
+.story .btn_wrap button.swiper-button-disabled{
+    opacity: 0.5;
+    cursor: default;
+}
+.story .btn_wrap button:not(.swiper-button-disabled):hover {
+    border-color: var(--color-main);
+    background-color: var(--color-main);
+    color   : #fff;
+}
+@media screen and (max-width:768px){
+           .story .list .swiper-slide a h3{
+                font-size: var(--font-size-subtit);
+           }
+           .story .list .swiper-slide a .photo{
+                height: 202px;
+           }
+           .story .list .swiper-slide.lone a .photo{
+                height: 301px;
+           }
+           .story .list .swiper-slide a p {
+            display: none;
+           }
+            .story .list .swiper-slide {
+                width: 220px;
+            }
+            .story .btn_wrap{
+                display: none;
+            }
+}/*@media */
+
 .footer{
-    margin: 1000px 0 0 0;
+    background-color: #000;
+    color: rgba(255, 255, 255, 0.8);
+    padding: clamp(78px, 10.3vw, 103px ) 0 clamp(76px, 11.6vw, 116px) 0;
 }   
+.footer .wrapper{
+    position: relative; /* copyright 정렬의 기준*/
+    display: flex;
+    justify-content: space-between;
+}
+.footer .slogan{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-subtit2);
+    line-height: var(--line-height-tit);
+    color: var(--color_wite);
+   
+}
+.footer .f_info{
+    width: 302px;
+}
+.footer .f_info h3{
+    font-family: var(--font-family-tit);
+    font-size: var(--font-size-subtit3);
+    line-height: var(--line-height-tit);
+    margin-bottom: 0.4em;
+}
+/* f_info 안에 있는 어떤 태그이든 상관없이 태그 이후에 나타나는 h3*/
+.footer .f_info * + h3{
+    margin-top: 1.85em;
+}
+.footer .f_info .sns{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.412em;
+}
+.footer .f_info .sns li a{
+    position: relative;
+}
+.footer .f_info .sns li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: width 0.3s;
+}
+.footer .f_info .sns li a:hover::after{
+    width: 100%;
+}
+.footer .copyright{
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 302px); /* 오른쪽 f_info의 넓이보다 조금 더 빼기 */
+}
+.footer .copyright .f_logo img{
+    width: 165px; /* 이미지는 넓이만 주면 높이는 알아서 비율에 맞게 들어감*/
+}
+.footer .copyright p{
+    margin: 7px 0 0 0;
+    color: rgba(255, 255, 255, 0.6);
+}
+/* @media screen and (max-width:1024px){
+        .footer .f_info{
+            width: auto;
+        }
+} */
+@media screen and (max-width:768px){
+            .footer .wrapper{
+                flex-direction: column;
+                gap: 78px 0;
+            }
+            .footer .slogan{
+                font-size: var(--font-size-subtit);
+            }
+            .footer .f_info{
+                width: auto;
+            }
+            .footer .f_info h3{
+                font-size: var(--font-size-subtit2);
+                margin-bottom: 13px;
+            }
+            
+            .footer .copyright{
+                position: relative; /*wrapper를 기준으로 정렬*/
+                left: auto;
+                bottom: auto;
+                width: auto; 
+                text-align: center;
+            }
+            .footer .copyright .f_logo img{
+                width: 145px; /* 이미지는 넓이만 주면 높이는 알아서 비율에 맞게 들어감*/
+                
+            }
+            .footer .copyright p{
+                margin: 7px 0 0 0;
+                color: rgba(255, 255, 255, 0.6);
+            }
+}/*@media*/

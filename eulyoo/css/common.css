@@ -23,7 +23,7 @@ body{
     .wrapper{
         width: auto;
         margin: 0 var(--wrapper-margin); 
-        border: 1px solid red;
+       
     }
 } 
 
@@ -47,6 +47,7 @@ body{
     --font-size-tit: 50px;
     --font-size-subtit:32px;
     --font-size-subtit2: 24px;
+    --font-size-subtit3: 20px;
     --wrapper-margin: 50px;
     --wrapper-w: 1284px;
     --font-color-default: #231815;
@@ -82,4 +83,12 @@ body{
             --wrapper-margin: 16px;
             --header-h: 56px;
         }
+}
+::selection{
+    background-color: var(--color-main);
+    color: var(--color-wite);
+}
+.footer *::selection{
+    background-color: var(--color-bg);
+    color: var(--font-color-tit);
 }
