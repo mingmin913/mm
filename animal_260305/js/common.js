@@ -95,5 +95,24 @@ $(document).ready(function () {
              $('.header').removeClass('menu_open')
         }
     })
+    /* top 버튼을 클릭하면 상단으로 스크롤*/
+    $('.footer .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500)
+    })
 
+    /* footer의 높이를 계산해서 container의 하단 여백으로 줌*/
+    let footer_h
+
+    function footer_count(){
+        footer_h = $('.footer').outerHeight()
+        console.log(footer_h)
+        $('.container').css('margin-bottom', footer_h)
+    }
+    footer_count()
+    $(window).resize(function(){
+        footer_count()//함수실행(호출), 브라우저가 리사이즈
+    })
+    
 });
