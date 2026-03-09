@@ -1,0 +1,123 @@
+/*각각의 콘텐츠페이지 스타일
+ - 여기있는 css를 수정하면 해당 페이지 1개만 영향이 있음
+  */
+.cnt_info {
+    margin: 0 0 clamp(50px, 9vw, 90px) 0;
+}
+
+.cnt_info .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cnt_info .photo {
+    overflow: hidden;
+    height: clamp(464px, 81.2vw, 812px);
+    width: 37.57%;
+    border-radius: 30px;
+    margin: 124px 0 0 0;
+}
+
+.cnt_info .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.cnt_info .txt_wrap {
+    width: 54.31%;
+}
+
+.cnt_info .txt_wrap .tit {
+    position: relative;
+    color: var(--color-white);
+    padding-bottom: 86px;
+}
+
+.cnt_info .txt_wrap .tit::before {
+    content: "";
+    position: absolute;
+    right: calc(((100vw - var(--wrapper-w)) / 2 - 50px) * -1);
+    top: 0;
+    z-index: -1;
+    width: calc(100vw - 100px);
+    height: 100%;
+    background-color: var(--color-main);
+    border-radius: 50px;
+}
+
+
+.cnt_info .txt_wrap .tit h2 {
+    font-size: 36px;
+    padding: 47px 0 44px 0;
+}
+
+.cnt_info .txt_wrap .tit p {
+    font-size: 17px;
+}
+
+.cnt_info .txt_wrap .txt {
+    margin: 46px 0;
+}
+
+.cnt_info .txt_wrap .sign img {
+    width: 214px;
+}
+
+@media screen and (max-width:1600px) {
+
+    /* 1440 + 30 + 30 +50 + 50*/
+    .cnt_info .txt_wrap .tit::before {
+        right: calc(var(--wrapper-margin)* -1);
+        width: calc(100vw - (var(--wrapper-margin) * 2));
+        border-radius: var(--wrapper-margin);
+    }
+
+    .cnt_info .wrapper {
+        width: auto;
+        margin: 0 calc(var(--wrapper-margin) * 2);
+    }
+}
+
+@media screen and (max-width:1024px) {
+            .cnt_info .wrapper {
+                display: block;
+                margin: 0 var(--wrapper-margin);
+            }
+            .cnt_info .photo{
+                width: 100%;
+                max-width: 600px;
+                border-radius: 20px;
+                margin: 0 auto;
+            }
+            .cnt_info .txt_wrap {
+                width: auto;
+            }
+            .cnt_info .txt_wrap .tit {
+                padding-bottom: 40px;
+            }
+            .cnt_info .txt_wrap .tit::before {
+                top: -162px;
+                right: calc(var(--wrapper-margin) * -1);
+                width: 100vw;
+                height: calc(100% + 162px);
+                border-radius: 0;
+            }
+            
+            .cnt_info .txt_wrap .tit h2 {
+                font-size: 24px;
+                padding: 24px 0 39px 0;
+            }
+            .cnt_info .txt_wrap .tit p {
+                font-size: 17px;
+            }
+
+            .cnt_info .txt_wrap .txt {
+                margin: 47px 0;
+            }
+
+            .cnt_info .txt_wrap .sign img {
+                width: 214px;
+            }
+}
