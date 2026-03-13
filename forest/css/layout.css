@@ -17,6 +17,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: auto;
+    margin: 0 clamp(16px, 3vw, 30px);
+    
+
 }
 .header .logo a{
     display: block;
@@ -37,12 +41,12 @@
 }
 @media screen and (min-width:1025px){
         .header .gnb .gnb_open{
-            display: none;
+            display: none;      
         }
-        .header .gnb .gnb_wrap ul.dpeth1{
+        .header .gnb .gnb_wrap ul.depth1{
             display: flex; /*li좌우배치*/
         }
-        .header .gnb .gnb_wrap ul.dpeth1 > li > a{
+        .header .gnb .gnb_wrap ul.depth1 > li > a{
             display: block;
             line-height: 100px;
             font-size: 20px;

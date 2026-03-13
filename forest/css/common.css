@@ -4,7 +4,8 @@ body, html{
     font-weight: 400;
     color: #3d3d3d;
     line-height: 1.5;
-    word-break: keep-all; /* 단어로 줄바꿈*/
+    word-break: keep-all; /* 단어로 줄
+    바꿈*/
     word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈*/
 }
 .wrapper{
@@ -19,6 +20,12 @@ body, html{
         margin: 0 130px; /* 이제 좌우여백이 고정으로 변경*/
     }
 }
+@media screen and (max-width:1024px){
+    .wrapper{
+        margin: clamp(16px, 3vw, 30px);
+    }
+}
+
 .sr-only {
     position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
