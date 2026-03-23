@@ -21,8 +21,12 @@ $(document).ready(function () {
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             769: {    /* 640px 이상일때 적용 */
-                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 16    ,   
+            },
+             1025: {    /* 640px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24   ,   
             },
         },
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
@@ -71,9 +75,13 @@ $(document).ready(function () {
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            640: {    /* 640px 이상일때 적용 */
-                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 20,
+            },
+            1025: {    /* 640px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
             },
         },
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
