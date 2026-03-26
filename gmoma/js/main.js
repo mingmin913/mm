@@ -11,8 +11,8 @@ $(document).ready(function () {
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
         navigation: {  /* 이전, 다음 버튼 */
-            nextEl: '.swiper-button-next',  /* 다음 버튼의 클래스명 */
-            prevEl: '.swiper-button-prev',  
+            nextEl: '.visual .ctrl_right .next',  /* 다음 버튼의 클래스명 */
+            prevEl: '.visual .ctrl_right .prev',  
         },
 
     });
@@ -36,8 +36,8 @@ $(document).ready(function () {
         // 	disableOnInteraction: true,
         // },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.exhibit .ctrl_right .next',
+            prevEl: '.exhibit .ctrl_right .prev',
         },
         pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
             el: '.swiper-pagination', /* 해당 요소의 class명 */
@@ -61,8 +61,8 @@ $(document).ready(function () {
         //     disableOnInteraction: true,
         // },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.collect .ctrl_right .next',
+            prevEl: '.collect .ctrl_right .prev',
         },
         pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
             el: '.swiper-pagination', /* 해당 요소의 class명 */
@@ -91,8 +91,8 @@ $(document).ready(function () {
         //     disableOnInteraction: true,
         // },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.event .ctrl_right .next',
+            prevEl: '.event .ctrl_right .prev',
         },
         pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
             el: '.swiper-pagination', /* 해당 요소의 class명 */
