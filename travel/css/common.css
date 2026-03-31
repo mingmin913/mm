@@ -16,6 +16,9 @@ body, html{
     width: 1260px;
     margin: 0 auto; /*가운데*/
 }
+#wrap{
+    position: relative;/* header 정렬의 기준 */
+}
 @media screen and (max-width:1500px){ /* 1440 + 30 + 30 */
     .wrapper{
         width: auto;

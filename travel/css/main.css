@@ -2,9 +2,45 @@
 @import url(common.css);
 @import url(fonts.css);
 
-body{
-    font-size: 14px;
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 100px;
+    width: 100%;
+    color: #1d1d1d;
+}
+.header .header_group{
+    display: flex;
+    align-items: center;
+}
+
+.header .logo a{
+    display: block;
+    width: 77px;
+    height: 33px;
+}
+.header .gnb .gnb_open{
+    display: none;
+}
+.header .gnb .gnb_wrap ul{
+    display: flex;
+    font-size: 20px;
     font-weight: 400;
-    color: #3d3d3d;
-    line-height: 1.5;
+    color: #1d1d1d;
+   
+}
+.header .gnb .gnb_wrap ul li a{
+    display: block;
+    line-height: 100px;
+    
+}
+.header .util{
+    
+}
+.header .util .notif{
+    width: 27px;
+    height: 27px;
+    background: url(../notif.svg) no-repeat center center / contain;
 }
