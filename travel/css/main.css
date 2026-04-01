@@ -321,3 +321,61 @@
         padding: 0 0 17px 0;
     }
 }/*@media*/
+
+.recom h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 144px 0 39px 0;
+}
+.recom h2 strong{
+    color: #D52B1E;
+}
+
+.recom .swiper-slide a{
+    display: block;
+}
+.recom .swiper-slide a .photo{
+    position: relative;
+    overflow: hidden;
+    height:440px;
+    border-radius: 5px;
+}
+.recom .swiper-slide a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.recom .swiper-slide a .photo .txt{
+    position: absolute;
+    left: 40px;
+    bottom: 26px;
+    color: #fff;
+}
+.recom .swiper-slide a .photo .txt h3{
+    font-size: 20px;
+    padding: 0 0 10px 0;
+}
+.recom .swiper-slide a .photo .txt p  strong{
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.5;
+    
+}
+.recom .ctrl_right .next{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+}
+.recom .ctrl_right .next,
+.recom .ctrl_right .prev{
+    
+    width: 45px;
+    height: 45px;
+    border-radius:50%;
+    background: url(../images/main/arrow.svg) no-repeat center center;
+    background-color: #D52B1E;
+}
