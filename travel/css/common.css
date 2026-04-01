@@ -13,7 +13,7 @@ body, html{
     word-wrap: break-word;/* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
 }
 .wrapper{
-    width: 1260px;
+    width: 1440px;
     margin: 0 auto; /*가운데*/
 }
 #wrap{
@@ -48,7 +48,7 @@ body, html{
 }
 @media screen and (max-width:768px){
     :root{
-        --font-size-default: 16px;
+        --font-size-default: 17px;
         --font-size-tit: 28px;
         --font-size-subtit: 20px;
         --wrapper-margin: 16px;

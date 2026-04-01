@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="css/main.css">
-    <!-- <link rel="shortcut icon" href="favicon.svg" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <title>색다른 여행사</title>
 </head>
 <body>
@@ -12,7 +17,7 @@
         <div class="header_group">
             <h1 class="logo"><a href="#n"><img src="images/main/logo.png" alt="로고"></a></h1>
             <nav class="gnb">
-                <button class="gnb_open"><img src="../travel/menu.svg"><span sr-only>메뉴열기</span></button>
+                <button class="gnb_open"><img src="../travel/images/main/menu.svg"></button>
                 <div class="gnb_wrap">
                     <ul class="depth1">
                         <li><a href="#n"><span>아메리카 / 아프리카</span></a></li>
@@ -24,17 +29,172 @@
                 </div>
             </nav>
         </div>
-        <div class="header_group">
+        <div class="header_group2">
             <div class="search">
-                <input type="text" placeholder="어디로 떠나세요?">
-                <input type="submit">
+                <input type="text" placeholder="어디로 떠나세요?" class="txt">
+                <input type="submit" class="btn" value="">
             </div>
             <div class="util">
-                <a href="#n" class="notif"><span>알림/span></a>
-                <a href="#n" class="mypage"><span>마이페이지</span></a>
-                <a href="#n" class="calendar"><span>캘린더</span></a>
+                <a href="#n" class="notif"><span class="sr-only">알림</span></a>
+                <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                <a href="#n" class="calendar"><span class="sr-only">캘린더</span></a>
             </div>
         </div>
     </header>
+    <main class="container">
+        <section class="visual">
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide pop1">
+                        <div class="wrapper">
+                            <h2>자연이 만든 가장 위대한 여행지</h2>
+                            <p>#자연의경이 #나이아가라폭포 #버킷리스트</p>
+                        </div>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide pop2">
+                        <div class="wrapper">
+                            <h2>걷는 순간, 여행이 영화가 되는 곳</h2>
+                            <p>#프라하여행 #유럽감성 #천문시계탑</p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide pop3">
+                        <div class="wrapper">
+                            <h2>클래식과 현대가 만나는 도시, 런던</h2>
+                            <p>#런던여행 #타워브릿지 #도시여행</p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide pop4">
+                        <div class="wrapper">
+                            <h2>세상에서 가장 고요한 풍경 속으로</h2>
+                            <p>#뉴질랜드 #자연여행 #힐링여행</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section><!--visual-->
+        <section class="time">
+           <div class="wrapper">
+                <h2>기간 한정 <strong>타임</strong>특가</h2>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/time01.jpg" alt="오사카">
+                                        <strong><span></span>지금 130명이 이 상품을 보고있어요</strong>
+                                    </div>
+                               </a>
+                               <div class="limit">
+                                    <span>타임특가<strong>3일 13:57:05</strong>남음</span>
+                                </div>
+                                    <h3>일본 오사카 4일 전통과 감성의 완벽한 조화</h3>
+                                    <p>[교토/나라/고베] 1300년 이상 역사 아리마 온천 마을 방문 대나무숲과 신사, 고즈넉한 골목까지 여유로운 힐링 여행</p>
+                                <div class="price">
+                                    <div class="sale"><strong>혜택할인</strong><span>649,000원~</span></div>
+                                    <div class="sum">589,000원~</div>
+                                </div>    
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/time02.jpg" alt="중국">
+                                        <strong><span></span>지금 121명이 이 상품을 보고있어요</strong>
+                                    </div>
+                                </a>
+                                <div class="limit">
+                                    <span>타임특가<strong>2일 11:20:17</strong>남음</span>
+                                </div>
+                                    <h3>중국 장가계/원가계 6일 영화 같은 절경 속으로</h3>
+                                    <p>[천문산사/72기루/미혼대] 천문사 케이블카 탑승 하늘을 찌르는 기암절벽, 자연이 만든 압도적 풍경</p>
+                                <div class="price">
+                                    <div class="sale"><strong>혜택할인</strong><span>816,000원~</span></div>
+                                    <div class="sum">678,000원~</div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/time03.jpg" alt="스위스">
+                                        <strong><span></span>지금 173명이 이 상품을 보고있어요</strong>
+                                    </div>
+                                </a>
+                                <div class="limit">
+                                    <span>타임특가<strong>1일 08:26:59</strong>남음</span>
+                                </div>
+                                    <h3>스위스 융프라우 10일 유럽 알프스의 절정</h3>
+                                    <p>[그린델발트/피르스트/인터라겐] 산악열차, 곤돌라 탑승 만년설과 함께하는 스위스 대표 명소</p>
+                                <div class="price">
+                                    <div class="sale"><strong>혜택할인</strong><span>8,650,900원~</span></div>
+                                    <div class="sum">6,399,000원~</div>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/time04.jpg" alt="터키">
+                                        <strong><span></span>지금 156명이 이 상품을 보고있어요</strong>
+                                    </div>
+                                </a>
+                                <div class="limit">
+                                    <span>타임특가<strong>4일 05:43:36</strong>남음</span>
+                                </div>
+                                    <h3>터키 카파도키아 9일 하늘 위 열기구 여행</h3>
+                                    <p>[우치사르/파묵칼레] 소금 호수, 데브란트 계곡 방문 독특한 지형과 함께하는 이색 감성 여행</p>
+                                <div class="price">
+                                    <div class="sale"><strong>혜택할인</strong><span>1,799,000원~</span></div>
+                                    <div class="sum">1,589,000원~</div>
+                                </div>
+                            </li>    
+                        </ul>
+                    </div>
+                </div>
+           </div>
+        </section>
+        <section class="recom">
+            <div class="wrapper">
+                <h2>엄선된 <strong>추천</strong> 여행</h2>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/recom01.jpg" alt="세부">
+                                        <h3></h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/recom02.jpg" alt="대만">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/recom03.jpg" alt="후쿠오카">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo">
+                                        <img src="images/main/recom04.jpg" alt="스페인">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ctrl_right">
+                        <button class="next"><span class="sr-only">다음팝업보기</span></button>
+                        <button class="prev"><span class="sr-only">이전팝업보기</span></button>
+                    </div>
+                </div>
+            </div>
+        </section><!--recom-->
+    </main>
 </body>
 </html>
