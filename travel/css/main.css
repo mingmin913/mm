@@ -333,49 +333,366 @@
 .recom h2 strong{
     color: #D52B1E;
 }
-
-.recom .swiper-slide a{
+.recom .list{
+    position: relative;
+}
+.recom .list .swiper-slide a{
+    position: relative;
     display: block;
 }
-.recom .swiper-slide a .photo{
-    position: relative;
+.recom .list .swiper-slide a .photo{
     overflow: hidden;
     height:440px;
     border-radius: 5px;
 }
-.recom .swiper-slide a .photo img{
+.recom .list .swiper-slide a .photo img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    vertical-align: top;
 }
-.recom .swiper-slide a .photo .txt{
+.recom .list .swiper-slide a .txt{
     position: absolute;
     left: 40px;
     bottom: 26px;
     color: #fff;
 }
-.recom .swiper-slide a .photo .txt h3{
+.recom .list .swiper-slide a .txt h3{
     font-size: 20px;
     padding: 0 0 10px 0;
 }
-.recom .swiper-slide a .photo .txt p  strong{
+.recom .list .swiper-slide a .txt strong{
     font-size: 17px;
     font-weight: 700;
     line-height: 1.5;
-    
+    padding: 0 0 11px 0;
 }
-.recom .ctrl_right .next{
+.recom .next{
+    transform: rotate(180deg);
+}
+.recom .next{
     position: absolute;
     z-index: 10;
-    right: 0;
-    top: 0;
+    right: -22px;
+    top: 190px;
 }
-.recom .ctrl_right .next,
-.recom .ctrl_right .prev{
-    
+.recom .prev{
+    position: absolute;
+    z-index: 10;
+    left: -21px;
+    top: 190px;
+}
+.recom .next,
+.recom .prev{
+    display: block;
     width: 45px;
     height: 45px;
     border-radius:50%;
     background: url(../images/main/arrow.svg) no-repeat center center;
     background-color: #D52B1E;
+}
+@media screen and (max-width:768px){
+    .recom h2,
+    .recom h2 strong{
+        font-size: 32px;
+        margin: 84px 0 32px 0;
+    }
+    
+    .recom .swiper-slide a .photo .txt h3{
+        font-size: 17px;
+        padding: 0 0 4px 0;
+    }
+    .recom .swiper-slide a .photo .txt strong{
+        padding: 0 0 2px 0;
+    }
+    .recom .next,
+    .recom .prev{
+        display: none;
+    }
+}
+.advert{
+    padding: 93px 0 0 0 ;
+}
+
+.advert a{
+    position: relative;
+    display: block;
+}
+.advert a .photo{
+    position: relative;
+    overflow: hidden;
+    height:159px;
+    border-radius: 10px;
+   
+}
+.advert a .photo::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(213, 43, 30, 1),rgba(213, 43, 30, 1),rgba(213, 43, 30, 1) ,rgba(213, 43, 30, 0),rgba(213, 43, 30, 0));
+}
+.advert a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.advert a .txt{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    color: #fff;
+    padding: 30px 0 0 104px;
+}
+.advert a .txt h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.advert a .txt p{
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+@media screen and (max-width:768px){
+    .advert a .txt{
+        padding: 59px 0 0 18px;
+    }
+    .advert a .txt p{
+        display: none;
+    }
+}
+
+.best h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    padding: 156px 0 0 0;
+}
+.best h2 strong{
+    color: #D52B1E;
+}
+.best .list .swiper{
+    padding: 63px 0;
+}
+.best .list .swiper-slide{
+    transition: transform 0.3s;
+}
+.best .list .swiper-slide .photo{
+    overflow: hidden;
+    border-radius: 50%;
+}
+.best .list .swiper-slide .photo img{
+    display: block; /* 없으니까 사진이 밑에 잘렸는데 들어가니까 사진이 채워졌다,,*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.best .list .swiper-slide.swiper-slide-active{
+    transform: scale3d(1.3, 1.3, 1);
+    z-index: 2;
+}
+.best .list .swiper-slide.swiper-slide-active .photo{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.best .list .swiper-slide a .txt{
+    text-align: center;
+}
+.best .list .swiper-slide a .txt h3{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 15px 0 0 0;
+}
+.best .list .swiper-slide a .txt h3 span{
+    background-image: linear-gradient(transparent calc(100% - 1px), #1d1d1d 10px); /* 30px <- 이 값을 수정하여 밑줄 두께 조절 */
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-position: left bottom;
+    transition: background-size 0.6s ease;
+}
+.best .list .swiper-slide a:hover .txt h3 span{
+    background-size: 100% 100%;
+}
+.best .list .swiper-slide a .txt p{
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d3d3d;
+}
+@media screen and (max-width:768px){
+    .best .list .swiper-slide .photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .best .list .swiper-slide.swiper-slide-active{
+        display: none;
+    }
+}
+.emotion h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 146px 0 60px 0;
+}
+.emotion h2 strong{
+    color: #D52B1E;
+}
+.emotion .list ul{
+    display: flex;
+    gap: 16px;
+}
+.emotion .list ul li{
+    flex: 1 1 0%;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.emotion .list ul li.active{
+    flex: 3 1 0%;
+}
+.emotion .list ul li a{
+    display: flex;
+    flex-direction: column;
+    height: 457px;
+    background: url(../images/main/emotion01.jpg) no-repeat center center / cover;
+    color: #fff;
+    padding: 40px 0 0 40px;
+}
+.emotion .list ul .emotion02 a{
+    background-image: url(../images/main/emotion02.jpg);    
+}
+.emotion .list ul .emotion03 a{
+    background-image: url(../images/main/emotion03.jpg);    
+}
+.emotion .list ul .emotion04 a{
+    background-image: url(../images/main/emotion04.jpg);    
+}
+.emotion .list ul li a h3{
+    display: none;
+}
+.emotion .list ul li.active a h3{
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.emotion .list ul li a p{
+    display: none;
+}
+.emotion .list ul li.active a p{
+    display: block; 
+}
+.banner .wrapper{
+    position: relative;
+}
+.banner .banner02{
+    display: flex;
+    gap: 24px;
+    padding: 144px 0 0 0;
+}
+.banner  a{
+    position: relative;
+    display: block;
+}
+.banner .reser{
+    width: calc(50% - 12px);
+    height: 159px;
+    background-color: #BBDEFA;
+    border-radius: 10px;
+}
+.banner .reser a{
+    padding: 25px 0 0 87px; 
+}
+.banner .reser a .icon{
+    position: absolute;
+    right: 110px;
+    top: 19px;
+    z-index: 1;
+    background: url(../images/main/air.png) no-repeat center center;
+    width: 161px;
+    height: 100%;
+}
+.banner .reser h2{
+    font-size: 24px;
+    font-weight: 700;
+    color: #1d1d1d;
+    padding: 0 0 20px 0;
+}
+.banner .reser a .more::after{
+    content: "";
+    position: absolute;
+    left: 151px;
+    bottom: 8px;
+    z-index: 1;
+    width: 10px;
+    height: 10px;
+    background: url(../images/main/arrow_b.svg) no-repeat center center;
+
+}
+.banner .luxury{
+    width: calc(50% - 12px);
+    height: 159px;
+}
+.banner .luxury a{
+    display: block;
+    height: 100%;
+    padding: 25px 0 0 80px;
+}
+.banner .luxury a .photo{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.banner .luxury a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.banner .luxury a .photo::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(15, 23, 42, 1),rgba(15, 23, 42, 1),rgba(15, 23, 42, 1) ,rgba(15, 23, 42, 0),rgba(15, 23, 42, 0));
+}
+.banner .luxury a h2{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding: 0 0 20px 0;
+}
+.banner .luxury a span{
+    color: #fff;
+}
+.banner .luxury a .more::after{
+    content: "";
+    position: absolute;
+    left: 143px;
+    bottom: 34px;
+    z-index: 1;
+    background: url(../images/main/arrow_w.svg) no-repeat center center;
+    width: 10px;
+    height: 10px;
+}
+
+body{
+    margin-bottom: 500px;
 }

@@ -5,10 +5,10 @@
 */
 body, html{
     font-family: "paperozi", sans-serif;
-    font-weight: var(--font-weight-default);
-    font-size: var(--font-size-default);
-    color: var(--font-color-default);
-    line-height: var(--line-height-default);/* 배수(글자크기의 몇배) */
+    font-weight: 400;
+    font-size: 17px;
+    color: #1d1d1d;
+    line-height: 1.5;/* 배수(글자크기의 몇배) */
     word-break: keep-all;/* 단어 단위로 줄바꿈 */
     word-wrap: break-word;/* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
 }
@@ -22,7 +22,12 @@ body, html{
 @media screen and (max-width:1500px){ /* 1440 + 30 + 30 */
     .wrapper{
         width: auto;
-        margin: 0 var(--wrapper-margin);
+        margin: 0 30px;
+    }
+}
+@media screen and (max-width:768px){
+    .wrapper{
+        margin: 0 16px;
     }
 }
 /* html 표준때문에 입력해야하는 태그이지만 홈페이지에 나오지 않는
@@ -37,27 +42,4 @@ body, html{
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
-}
-@media screen and (max-width:1024px){
-    :root{
-        --wrapper-margin: 24px;
-        --header-h: 70px;
-        --font-size-tit: 32px;
-        --font-size-subtit: 22px;
-    }
-}
-@media screen and (max-width:768px){
-    :root{
-        --font-size-default: 17px;
-        --font-size-tit: 28px;
-        --font-size-subtit: 20px;
-        --wrapper-margin: 16px;
-        --snb-h: 52px;  
-        --header-h: 56px;
-        --gap: 16px;
-    }
-}
-::selection{
-    background-color: var(--color-main);
-    color: var(--color-white);
 }
