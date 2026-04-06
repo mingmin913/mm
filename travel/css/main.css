@@ -268,7 +268,7 @@
     content: ""; 
     position: absolute;
     left: -1px; /*content 있으면 필수*/
-    top: -4px; /*content 있으면 필수*/
+    top: 1px; /*content 있으면 필수*/
     width: 25px;
     height: 25px;
     background: url(../images/main/clock.svg) no-repeat center center ;
@@ -297,6 +297,7 @@
     font-size: 14px;
     color: #D52B1E;
 }
+
 @media screen and (max-width:768px){
 
     .time h2{
@@ -838,17 +839,22 @@
 .banner .paging{
     display: none;
 }
+@media screen and (max-width:1300px){
+    .banner .swiper-slide .reser a .icon{
+        display: none;
+    }
+}
 @media screen and (max-width:768px){
     .banner{
         position: relative;
     }
-   
     .banner .swiper-slide  .reser{
         background-color: #BBDEFA;
         height: 240px;
         padding: 34px 0 0 39px;
     }
     .banner .swiper-slide .reser a .icon{
+        display: block;
         left: 122px;
         top: 49px;
         width: 50%; 
@@ -910,9 +916,8 @@
 .premium{
     position: relative;
     background-color: #6F5241;
-    height: 789px;
     color: #fff;
-    padding: 73px 40px 0 40px;
+    padding: 73px 40px 71px 40px;
 }
 .premium .tit{
     position: absolute;
@@ -950,6 +955,9 @@
     position: absolute;
     left: 20px;
     bottom: 12px;
+}
+.premium .paging{
+    display: none;
 }
 @media screen and (max-width:1544px){
     .premium .tit h2{
@@ -1001,11 +1009,32 @@
     .premium .tit p br{
         display: none;
     }
-    
-}
-.review{
+    .premium .paging {
+        position: absolute;
+        left: 0;
+        bottom: 18px;
+        z-index: 1;
+        width: 100%;
+        height: 8px;
+        display: flex;
+        justify-content: center;
+        gap: 0 6px
+    }    
+    .premium .paging .swiper-pagination-bullet {
+        border: 1px solid #fff;
+        background: transparent;
+        margin: 0;
+        z-index: 1;
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+    }
+    .premium .paging .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-color: #fff;
 
-}
+    }
+}    
+
 .review .tt h2{
     text-align: center;
     font-size: 40px;
@@ -1018,6 +1047,16 @@
 }
 .review .list{
     position: relative;
+    padding: 0 0 315px 0;
+}
+.review .list .more a{
+    content: "";
+    position: absolute;
+    right: 13px;
+    top: -130px;
+    width: 28px;
+    height: 27px;
+    background: url(../images/main/more.svg) no-repeat center center;
 }
 /* .review .list .swiper-grid-column>.swiper-wrapper{
     flex-direction: row;
@@ -1041,7 +1080,7 @@
 .review .list .swiper-slide a .tit{
     position: relative;
     width: 100%;
-    padding: 0 80px 0 20px;
+    padding: 0 0 0 20px;
 }
 .review .list .swiper-slide a .tit .time{
     display: flex;
@@ -1060,12 +1099,138 @@
     color: #3d3d3d;
 
 }
-@media screen and (max-width:768px){
-    .review .list .swiper-slide{
-       
+@media screen and (max-width:1500px){
+    .review .list .swiper-slide a .photo{
+        width: 100%;
+        height: 311px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .review .list .swiper-slide a .photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: top;
+    }
+    .review .list .swiper-slide a{
+        flex-direction: column;
+        gap: 16px;
+    }
+    .review .list .more a{
+        right: 13px;
+        top: -130px;
+        width: 28px;
+        height: 27px;
+    }
+    .review .list .swiper-slide a .tit h3{
+        padding: 0 0 22px 0;
+    }
+    .review .list .swiper-slide a .tit p{
+        display: none;
+    }
+    .review .list .swiper-slide a .tit{
+        display: flex;
+        flex-direction: column-reverse; /*pc에서 날짜가 위에 있던 걸 모바일에선 아래로*/
+        padding: 0 0 0 0;
+    }
+    
+}
+@media screen and (max-width:1440px){
+    .review .list .more a{
+        content: "";
+        position: absolute;
+        right: 13px;
+        top: -130px;
+        width: 28px;
+        height: 27px;
+        background: url(../images/main/more.svg) no-repeat center center;
+    }
+}
+@media screen and (max-width:769px){
+    
+    .review .list .swiper-slide .tit{
+        display: block;
+    }
+    .review .list .more a{
+        right: 13px;
+        top: 385px;
+        z-index: 1;
+        width: 15px;
+        height: 15px;
     }
 
 }
-body{
-    margin-bottom: 500px;
-}        
+@media screen and (max-width:426px){
+    .review .list .more a{
+        right: 13px;
+        top: 417px;
+        z-index: 1;
+        width: 15px;
+        height: 15px;
+    }
+}
+.footer{
+    position: relative;
+    border-top: 1px solid #ccc;
+    padding: 64px 0 0 0;
+}
+.footer .wrapper{
+    display: flex;
+    gap: 158px; 
+    flex-direction: row-reverse; /* 모바일에서 로고가 아래로 향해서*/   
+    justify-content: flex-end;
+}
+.footer .left{
+    display: flex;
+    flex-direction: column-reverse; /* 모바일에서 로고가 아래로 향해서*/
+    justify-content: flex-end;  /* 모바일에서 로고가 아래로 향해서*/
+}
+.footer .left .counsel{
+    margin: 69px 0 0 0;
+}
+.footer .f_nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 700;
+    color: #3d3d3d;
+    gap: 33px;
+}
+.footer .f_info{
+    color: #3d3d3d;
+    margin: 48px 0 0 0;
+}
+.footer .f_info span{
+    margin: 0 10px 20px 0;
+    display: inline-block; /*글자 위아래 사이에 여백 줄 때 inline-block*/
+    
+}
+.footer .copy{
+    color: rgba(61, 61, 61, 0.8);
+    margin: 0 0 78px 0;
+}
+@media screen and (max-width:1250px){
+    .footer{
+        padding: 37px 0 0 0;
+    }
+    .footer .wrapper{
+        display: block;
+    }
+    /* .footer .f_nav ul li::after{
+        content: "";
+        position: absolute;
+        right: 1;
+        top: 3;
+        width: 1px;
+        height: 10px;
+        background-color: #ccc;
+    } */
+    .footer .f_info{
+        margin: 31px 0 0 0;
+    }
+    .footer .left{
+        text-align: center;
+    }
+    .footer .f_info span{
+
+    }
+}     
