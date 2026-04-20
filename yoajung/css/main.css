@@ -1,0 +1,9 @@
+/*
+    메인페이지에서만 호출
+    메인에 필요한 다른 css를 부름
+*/
+@import url(default.css);
+@import url(common.css);
+@import url(fonts.css);
+
+
