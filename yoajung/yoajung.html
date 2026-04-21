@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
     <link rel="stylesheet" href="css/main.css">
     <title>요아정</title>
@@ -20,13 +24,156 @@
                     <li><a href="#n"><span> 커뮤니티</span></a></li> 
                 </ul>
             </nav>
+            <button class="gnb_open"><img src="images/main/dehaze.svg"></button>
         </div>
     </header>
     <main class="container">
         <section class="visual">
+            <div class="photo01"><img src="images/main/k.png"></div>
+            <div class="txt">
+                <h2>Make it your way <br>Premium yogurt dessert</h2>
+                <p>언제 어디서나 내맘대로 프리미엄 디저트 브랜드 요아정</p>
+            </div>
+            <div class="photo02"><img src="images/main/yoajung.png"></div>
+        </section>
+        <section class="best">
             <div class="wrapper">
-                <h2></h2>
-                <p></p>
+                <h2><span>BEST MENU</span></h2>
+                <div class="tab_list">
+                    <ul>
+                        <li><a><span>요거트 아이스크림</span></a></li>
+                        <li><a><span>그릭요거트</span></a></li>
+                    </ul>
+                </div>
+                <div class="list">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice01.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>달달자몽의 정석</p>
+                                    </div>
+                                </a>
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice02.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>오자몽의 정석</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice03.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>달콤모닝의 정석</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice04.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>초코에 반한 딸기 정석</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice05.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>그래놀라+벌집꿀</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice06.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>달콤청포도의 정석</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice07.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>멜론의 정석</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/ice08.png" alt="아이스크림"></div>
+                                    <div class="txt">
+                                        <p>새콤달콤의 정석</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="Store">
+            <div class="wrapper">
+                <span><h2>Search Store</h2></span>
+                <span><p>가까운 요아정 매장을 찾아보세요</p></span>
+                <div class="search">
+                    <input type="text" placeholder="매장 찾기" class="txt">
+                    <input type="submit" class="btn" value="">
+                </div>
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/store01.jpg" alt="한남점"></div>
+                                <div class="txt">
+                                    <h3>한남점</h3>
+                                    <p>서울특별시 용산구 대사관로34길 16 2층</p>
+                                    <div class="road">
+                                        <p>4.0km</p>
+                                    </div>
+                                    <div class="time">
+                                        <p>영업 중</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/store02.jpg" alt="한남점"></div>
+                                <div class="txt">
+                                    <h3>을지로점</h3>
+                                    <p>서울특별시 중구 충무로 24 103호</p>
+                                    <div class="road">
+                                        <p>2.5km</p>
+                                    </div>
+                                    <div class="time">
+                                        <p>영업 중</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/store03.jpg" alt="한남점"></div>
+                                <div class="txt">
+                                    <h3>압구정점</h3>
+                                    <p>서울특별시 강남구 신사동 660-17</p>
+                                    <div class="road">
+                                        <p>3.5km</p>
+                                    </div>
+                                    <div class="time">
+                                        <p>영업 중s</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
     </main>

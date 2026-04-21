@@ -6,8 +6,255 @@
 @import url(common.css);
 @import url(fonts.css);
 
-header{
+.header{
+    position: absolute;
     height: var(--header-h);
+    width: 100%;
+    color: var(--font-color-tit);
+    font-family: "Cafe24Surround";
+}
+.header .wrapper{
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    
+}
+.header .gnb ul{
+    display: flex;
+    gap: 30px;
+}
+.header .gnb_open{
+    display: none;
+}
+@media screen and (max-width:1270px){
+            .header .gnb ul{
+                display: none;
+            }
+            
+}
+@media screen and (max-width:1024px){
+            .header .gnb ul{
+                display: none;
+            }
+            .header .gnb_open{
+                display: block;
+            }
+}
+@media screen and (max-width:768px){
+            .header{
+                height: var(--header-h);
+            }
+            .header .wrapper{
+                width: 100%;
+                padding: 0 30px;
+            }
+            .header .gnb{
+                display: none;
+            }
+            .header .gnb_open{
+                display: block;
+            }
+}
+
+
+.visual{
+    background: url(../images/main/visual.svg) no-repeat center bottom / cover;
+    padding: 174px 5% 307px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.visual .txt{
+    width: 44.51%; /* 739/1660*100 */
+}
+.visual .txt h2{
+    font-family: "Cafe24Surround";
+    font-size: 3vw;
+    white-space: nowrap;
+    color: var(--color-main);
+    line-height: var(--line-height-tit);
+}
+.visual .txt p{
+    font-weight: var(--font-weight-default);
+    padding: 17px 0 0 0;
+}
+.visual .photo01{
+    width: 9.15%; /* 152/1660*100 */
+    margin-top: 14%;
+    margin-right: 2.5%;
+}
+.visual .photo01 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.visual .photo02{
+    width: 50.18%; /* 833/1660*100 */
+    margin-left: -4.05%;
+}
+.visual .photo02 img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+@media screen and (max-width:1024px){
+            .visual{
+                background: none;
+                background-color: var(--color-sb2);
+                height: 425px;
+            }
+            .visual h2{
+                font-size: var(--font-size-tit);
+                color: var(--color-main);
+                line-height: var(--line-height-tit);
+                padding: 200px 0 0 0;
+            }
+            .visual p{
+                padding: 17px 0 0 0;
+            }
+            .visual .photo01{
+                display: none;
+            }
+            .visual .photo02{
+                margin-top: 24%;
+            }
+            .visual .photo02 img{
+                width: 95%;
+                object-fit: cover;
+            }
+}
+@media screen and (max-width:768px){
+            .visual{
+                padding: 200px 5% 307px 5%;
+            }
+            .visual .txt{
+                width: 44.51%;
+            }
+            .visual .txt h2{
+                font-size: 3.5vw;
+            }
+            .visual .txt p{
+                font-weight: var(--font-weight-default);
+                padding: 17px 0 0 0;
+            }
+            .visual .photo01{
+                width: 9.15%;
+                margin-top: 14%;
+            }
+            .visual .photo01 img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .visual .photo02{
+                width: 50.18%;
+                margin-left: auto;
+            }
+            .visual .photo02 img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+}
+@media screen and (max-width:425px){
+             .visual{
+                padding: 0 5% 37px 5%;
+                display: flex;
+                flex-direction: column;
+            }
+            .visual .txt{
+                width: 86.51%;
+            }
+            .visual .txt h2{
+                font-size: 24px; /*vw했다고 모바일에서도 게속 vw로 안가도 됌*/
+                padding: 115px 0 0 0;
+            }
+            .visual .txt p{
+                display: none;
+            }
+            .visual .photo02{
+                width: 73.18%;
+                margin-top: 0;
+                margin-right: 62px;
+            }
+            .visual .photo02 img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+}
+@media screen and (max-width:320px){
+            .visual .txt h2{
+                font-size: 20px; /*vw했다고 모바일에서도 게속 vw로 안가도 됌*/
+                padding: 115px 0 0 0;
+            }
+            .visual .photo02{
+                margin-right: 38px;
+            }
+}
+
+.best{
+    
+    
+}
+.best h2{
+    font-family: "Cafe24Surround";
+    text-align: center;
+    padding: 150px 0 14px 0;
+    font-size: var(--font-size-subtit);
+}
+.best h2 span{
+    display: inline-block;
+    padding-right: 44px;
+    position: relative;
+
+}
+.best h2 span::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 30px;
+    background: url(../images/main/logo2.svg) no-repeat center center / contain;
+}
+
+.best .tab_list{
+    position: relative;
+}
+.best .tab_list span{
+    font-size: 20px;
+}
+.best .tab_list ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 51px;
+}
+.best .tab_list ul li::before{
+    content: "";
+    position: absolute;
+    right: 129px;
+    top: 12px;
+    width: 1px;
+    height: 12px;
+    background-color: #ccc;
+}
+.best .list{
+    background: url(../images/main/YOAJUNG\ YOAJUNG.jpg) no-repeat center top 40% / contain;
+}
+.best .list .swiper-slide .photo{
+    overflow: hidden;
+    padding: 172px 0 0 0;
+}
+.best .list .swiper-slide .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.best .list .swiper-slide .txt{
+    text-align: center;
+}
+@media screen and (max-width:768px){
+
 }

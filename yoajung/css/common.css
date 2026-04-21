@@ -4,7 +4,7 @@
     프로젝트마다 변경됨 - 이 css에 있는 속성을 수정하면 프로젝트 전체가 바뀜
 */
 body{
-    font-family: "Pretendard", sans-serif;
+    font-family: "Pretendard", "Cafe24Surround", sans-serif;
     font-weight: var(--font-weight-default);
     font-size: var(--font-size-default);
     color: var(--font-color-default);
@@ -19,7 +19,7 @@ body{
 #wrap{
     position: relative;
 }
-@media screen and (max-width:1500px){ /* 1440 + 30 + 30 */
+@media screen and (max-width:1320px){ /* 1260 + 30 + 30 */
     .wrapper{
         width: auto;
         margin: 0 var(--wrapper-margin);
@@ -40,12 +40,13 @@ body{
 }
 :root{
     --wrapper-margin: 30px;
-    --wrapper-w: 1440px;
+    --wrapper-w: 1260px;
     --gap: 24px;
     --font-color-default: #3d3d3d;
     --font-color-tit: #1d1d1d;
     --color-main: #DA5C67;
     --color-sub1: #0074BC;
+    --color-sb2: #FFEBEA;
     --color-white: #fff;
     --color-light-gray: rgba(204, 204, 204, 0.8);
     --color-w80: rgba(255,255,255,0.8);
@@ -64,7 +65,7 @@ body{
 @media screen and (max-width:1024px){
     :root{
         --wrapper-margin: 24px;
-        --header-h: 70px;
+        --header-h: 90px;
         --font-size-tit: 32px;
         --font-size-subtit: 22px;
     }
