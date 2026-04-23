@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="css/main.css">
     <title>요아정</title>
 </head>
+
 <body>
     <header class="header">
         <div class="wrapper">
@@ -20,8 +22,8 @@
                     <li><a href="#n"><span>브랜드</span></a></li>
                     <li><a href="#n"><span>메뉴&매장</span></a></li>
                     <li><a href="#n"><span>창업</span></a></li>
-                    <li><a href="#n"><span>멤버십</span></a></li> 
-                    <li><a href="#n"><span> 커뮤니티</span></a></li> 
+                    <li><a href="#n"><span>멤버십</span></a></li>
+                    <li><a href="#n"><span> 커뮤니티</span></a></li>
                 </ul>
             </nav>
             <button class="gnb_open"><img src="images/main/dehaze.svg"></button>
@@ -41,8 +43,8 @@
                 <h2><span>BEST MENU</span></h2>
                 <div class="tab_list">
                     <ul>
-                        <li><a><span>요거트 아이스크림</span></a></li>
-                        <li><a><span>그릭요거트</span></a></li>
+                        <li><a href="#n"><span>요거트 아이스크림</span></a></li>
+                        <li><a href="#n"><span>그릭요거트</span></a></li>
                     </ul>
                 </div>
                 <div class="list">
@@ -120,9 +122,11 @@
         <section class="store">
             <div class="wrapper">
                 <h2><span>Search Store</span></h2>
-                <span><p>가까운 요아정 매장을 찾아보세요</p></span>
+                <span>
+                    <p>가까운 요아정 매장을 찾아보세요</p>
+                </span>
                 <div class="search">
-                    <input type="text" placeholder="매장 찾기" class="txt">
+                    <input type="text" id="keyword" placeholder="매장 찾기" class="txt">
                     <input type="submit" class="btn" value="">
                 </div>
                 <div class="list">
@@ -134,7 +138,7 @@
                                     <div class="txt">
                                         <div class="road">
                                             <h3>한남점</h3>
-                                            <p>서울특별시 용산구 대사관로34길 16 2층</p> 
+                                            <p>서울특별시 용산구 대사관로34길 16 2층</p>
                                             <p>4.0km</p>
                                         </div>
                                         <div class="time">
@@ -149,7 +153,7 @@
                                     <div class="txt">
                                         <div class="road">
                                             <h3>을지로점</h3>
-                                            <p>서울특별시 중구 충무로 24 103호</p> 
+                                            <p>서울특별시 중구 충무로 24 103호</p>
                                             <p>2.5km</p>
                                         </div>
                                         <div class="time">
@@ -183,30 +187,53 @@
                 <div class="list">
                     <div class="photo"><img src="images/main/family.jpg" alt="아이스크림짜는모습"></div>
                     <div class="tit">
-                        <h2><span>Join the Yoajung Family</span></h2>
+                        <h2>
+                            <span class="pc">Join the Yoajung Family</span>
+                            <span class="mobile">Yoajung Family</span>
+                        </h2>
                         <p><span>요아정과 함께 성장하는 창업 파트너</span></p>
-                        <div class="icon">
-                            <div class="shop"><img src="images/main/shop.svg" alt="가게 아이콘"></div>
-                            <div class="loc"><img src="images/main/loc.svg" alt="지도핀 아이콘"></div>
-                            <div class="money"><img src="images/main/money.svg" alt="동전 아이콘"></div>
-                        
+                        <div class="box">
+                            <div class="icon_list">
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                        <li class="swiper-slide">
+                                            <div class="shop">
+                                                <img src="images/main/shop.svg" alt="가게 아이콘">
+                                                <p>
+                                                    <span>넓은 영업권 보장</span> 
+                                                    <span class="mobile">배달 상권을 고려한 안정적인 운영</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <div class="loc">
+                                                <img src="images/main/loc.svg" alt="지도핀 아이콘">
+                                                <p>
+                                                    <span>간편한 매장 운영</span>
+                                                    <span class="mobile">다점포 운영도 부담 없이</span>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <div class="money">
+                                                <img src="images/main/money.svg" alt="동전 아이콘">
+                                                <p>
+                                                    <span>점주 상생 브랜드</span>
+                                                    <span class="mobile">합리적인 창업 비용 지원</span>
+                                                </p>
+                                            </div>
+                                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    </ul>
+                                </div>
+                                
+                            </div>
                         </div>
-                        <div class="txt">
-                            <p>넓은 영업권 보장</p>
-                            <p>간편한 매장 운영</p>
-                            <p>점주 상생 브랜드</p>
-                        </div>
-                        <div class="more"><a>자세히 보기</a></div>
+                        <div class="more"><a href="#n">자세히 보기</a></div>
                     </div>
                 </div>
-                
             </div>
         </section>
     </main>
-                            <!-- <ul>
-                                <li class="shop"><span><p>넓은 영업권 보장</p></span></li>
-                                <li class="icon02"><span><p>간편한 매장 운영</p></span></li>
-                                <li class="icon03"><span><p>점주 상생 브랜드</p></span></li>
-                            </ul> -->
 </body>
+
 </html>

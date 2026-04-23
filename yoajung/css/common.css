@@ -66,8 +66,8 @@ body{
     :root{
         --wrapper-margin: 24px;
         --header-h: 90px;
-        --font-size-tit: 32px;
-        --font-size-subtit: 22px;
+        --font-size-tit: 40px;
+        --font-size-subtit: 32px;
     }
 }
 @media screen and (max-width:768px){
