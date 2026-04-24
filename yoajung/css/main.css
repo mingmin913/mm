@@ -516,7 +516,7 @@
 .family .list .tit h2 span::after{
     content: "";
     position: absolute;
-    right: -9px;
+    right: -18px;
     top: 14px;
     width: 24px;
     height: 30px;
@@ -531,17 +531,19 @@
 }   
 .family .list .tit .icon_list ul{
     position: relative;
-    text-align: center;
-    gap: 45px;
+    display: flex;
+    align-items: flex-end;
+    gap: 34px;
 }
 .family .list .icon_list p .mobile{
     display: none;
 }
 .family .swiper-slide{
-    width: calc(33.333% - 27px);
+    width: calc(33.333% - 22px);
 }
 .family .list .tit .icon_list p{
     padding: 35px 0 0 0;
+    color: var(--font-color-default);
 }
 .family .list .tit .more{
     border: 1px solid var(--color-main);
@@ -602,14 +604,13 @@
 }
 @media screen and (max-width:768px){
             .family .list .tit .icon_list ul {
-                display: flex;
-                align-items: center;
-                gap: 80px;
-                justify-content: center;   
+                    gap: 12px;
+                    justify-content: center;
+                    align-items: flex-end;
             }     
             .family .list .icon_list p span {
                 font-weight: 700;
-                color: var(--font-color-tit);
+                color: var(--font-color-default);
             }
             .family .list .icon_list p .mobile {
                 display: block;
@@ -646,9 +647,20 @@
             .family .list .box{
                 padding: 0 17px ;
             }
+            .family .list .tit .icon_list{
+                position: relative;
+            }
             .family .list .tit .icon_list img{
                     width: 56px;
                     height: 60px;
+            }
+            .family .icon_list ul li{
+                    position: relative;
+                    display: flex;
+                    border: 1px solid rgba(204, 204, 204, 0.8);
+                    border-radius: 10px;
+                    justify-content: center;
+                    padding: 26px 0  28px 0;
             }
             .family .list .tit .icon_list .shop,
             .family .list .tit .icon_list .loc,
@@ -656,24 +668,383 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                padding:0 20px 0 20px; 
+                white-space: nowrap;
+
+                overflow: hidden;
+
+                text-overflow: ellipsis;
             }
-            .family .list .tit .icon_list{
-                position: relative;
+            .family .list .tit .icon_list p{
+                color: var(--font-color-default);
             }
-            .family .list .tit .icon_list ul {
-                display: flex;
-                gap: 24px;
-            }
-            .family .icon_list ul li{
-                    display: flex;
-                    border: 1px solid rgba(204, 204, 204, 0.8);
-                    border-radius: 10px;
-                    width: 500px;
-                    
-                    padding: 0 135px; 
+            .family .list .tit .more{
+                width: 195px;
             }
             
-            
-            
-            
+}
+@media screen and (max-width:375px){
+            .family .list .tit h2 span::after {
+                    right: 31px;
+                    top: 6px;
+                    width: 54px;
+                    height: 21px;
+            }
+            .family .list .tit .more{
+                width: 157px;
+            }
+            .family .list .tit .more a{
+                padding: 0 0 0 2px;
+            }
+
+}
+@media screen and (max-width:320px){
+            .family .list .tit h2 span::after {
+                right: 5px;
+                top: 7px;
+                width: 54px;
+                height: 19px;
+            }
+
+            .family .list .tit .more{
+                width: 157px;
+                margin: 54px 0 0 67px;
+            }
+            .family .list .tit .more a{
+                padding: 0 0 0 2px;
+                
+            }
+
+}
+.banner{
+    padding: 158px 0 196px 0;
+}
+.banner .swiper-slide .app{
+    position: relative;
+    background-color: var(--color-sub1);
+    border-radius: 20px;
+    height: 313px;
+}
+.banner .swiper-slide .app a{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.banner .swiper-slide .app a .icon{
+    position: absolute;
+    left: 15px;
+    top: 50px;
+    background: url(../images/main/app.png) no-repeat center center;
+    width: 34%;
+    height: 100%;
+}
+.banner .swiper-slide .app a .txt{
+    padding: 51px 51px 0 0;
+}
+.banner .swiper-slide .app a h2{
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-tit);
+    line-height: var(--line-height-default);
+}
+.banner .swiper-slide .app a span{
+    font-size: 20px;
+    font-weight: var(--font-weight-default);
+    line-height: var(--line-height-default);
+    /* padding: 72px 0 0 100px; */
+}
+.banner .swiper-slide .app .more{
+    display: block;
+    border: 1px solid var(--color-white);
+    background-color: var(--color-white);
+    border-radius: 50px;
+    width: 38%;
+    height: 51px;
+    padding: 11px 53px;
+    margin: 61px 100px 54px 0;
+}
+
+.banner .swiper-slide .one{
+    position: relative;
+    z-index: 1;
+    background-color: rgba(218, 92, 103, 0.4);
+    border-radius: 20px;
+    height: 313px;
+}
+.banner .swiper-slide .one a{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.banner .swiper-slide .one a .icon{
+    position: absolute;
+    left: 21px;
+    top: 169px;
+    background: url(../images/main/one.png) no-repeat center bottom;
+    width: 42%;
+    height: 42%;
+}
+.banner .swiper-slide .one a .txt{
+    padding: 51px 51px 0 0;
+}
+.banner .swiper-slide .one a h2{
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    color: var(--font-color-tit);
+    line-height: var(--line-height-default);
+}
+.banner .swiper-slide .one a span{
+    font-size: 20px;
+    font-weight: var(--font-weight-default);
+    line-height: var(--line-height-default);
+    /* padding: 72px 0 0 100px; */
+}
+.banner .swiper-slide .one .more{
+    display: block;
+    border: 1px solid var(--color-white);
+    background-color: var(--color-white);
+    border-radius: 50px;
+    width: 30%;
+    height: 52px;
+    padding: 10px 57px;
+    margin: 56px 115px 54px 0px;
+}
+@media screen and (max-width:1024px){
+     .banner .swiper-slide .app .more {
+        width: 46%;
+        height: 51px;
+        padding: 11px 44px;
+        margin: 42px 36px 0 0;
+    }   
+    .banner .swiper-slide .one a .txt {
+        padding: 33px 15px 0 0; 
+    }
+    .banner .swiper-slide .app a .icon {
+        position: absolute;
+        left: 52px;
+        top: 50px;
+        background: url(../images/main/app.png) no-repeat center bottom;
+        width: 29%;
+        height: calc(100% - 50px);
+        background-size: 100%;
+    }
+    .banner .swiper-slide .one a h2 {
+        margin: 0 20px 0 0;
+    }
+    .banner .swiper-slide .one a .txt {
+        padding: 33px 15px 0 0; 
+    }
+    .banner .swiper-slide .one .more {
+        width: 35%;
+        height: 46px;
+        padding: 7px 47px;
+        margin: 42px 41px 0 0;
+    }
+    .banner .swiper-slide .one a .icon {
+        position: absolute;
+        left: 52px;
+        top: 37px;
+        background: url(../images/main/one.png) no-repeat center bottom;
+        width: 51%;
+        height: calc(100% - 50px);
+        background-size: 100%;
+    }
+}
+@media screen and (max-width:768px){
+    .banner .swiper-slide .app .more {
+        width: 32%;
+        height: 51px;
+        padding: 11px 53px;
+        margin: 61px 100px 54px 0;
+}
+    .banner .swiper-slide .one .more {
+        width: 26%;
+        height: 52px;
+    }
+}    
+@media screen and (max-width:425px){
+    .banner .swiper-slide .app a h2,
+    .banner .swiper-slide .one a h2{
+        font-size: var(--font-size-tit);
+    }
+    .banner .swiper-slide .app a span,
+    .banner .swiper-slide .one a span{
+        font-size: 17px;
+    }
+    .banner .swiper-slide .app a .icon{
+        position: absolute;
+        left: 15px;
+        top: 50px;
+        background: url(../images/main/app.png) no-repeat center bottom;
+        width: 34%;
+        height: calc(100% - 50px);
+        background-size: 100%;
+}
+    .banner .swiper-slide .app .more {
+        width: 41%;
+        height: 51px;
+        padding: 11px 23px;
+        margin: 42px 69px 38px 0;
+}
+    .banner .swiper-slide .one .more {
+        width: 37%;
+        height: 48px;
+        padding: 11px 40px;
+        margin: 42px 53px 38px 0;
+    }
+    .banner .swiper-slide .one a .icon{
+        position: absolute;
+        left: 24px;
+        top: 27px;
+        background: url(../images/main/one.png) no-repeat center bottom;
+        width: 51%;
+        height: calc(100% - 50px);
+        background-size: 100%;
+    }
+}
+@media screen and (max-width:375px){
+    .banner .swiper-slide .app .more {
+        width: 46%;
+        height: 51px;
+        margin: 42px 36px 38px 0;
+    }
+    .banner .swiper-slide .app a .icon {
+        left: 11px;
+        width: 38%;
+    }
+    .banner .swiper-slide .one a .txt {
+        padding: 33px 15px 0 0; 
+    }
+    .banner .swiper-slide .one .more {
+        width: 45%;
+        height: 46px;
+        padding: 9px 46px;
+        margin: 42px 41px 38px 0;
+    }
+    .banner .swiper-slide .one a .icon {
+        left: 24px;
+        top: 34px;
+        width: 56%;
+    }
+}
+@media screen and (max-width:320px){
+    .banner .swiper-slide .app,
+    .banner .swiper-slide .one   {
+        height: 247px;
+    }
+    .banner .swiper-slide .app a h2,
+    .banner .swiper-slide .one a h2{
+        font-size: var(--font-size-default);
+    }
+    .banner .swiper-slide .app .more{
+        width: 58%;
+        height: 44px;
+        padding: 8px 27px;
+        margin: 33px 14px 0px 0px;
+    }
+    .banner .swiper-slide .app a .icon{
+        left: 21px;
+        top: 48px;
+        width: 30%;
+    }
+    .banner .swiper-slide .one .more{
+        width: 46%;
+        height: 44px;
+        padding: 9px 34px;
+        margin: 26px 15px 0 0;
+    }
+    .banner .swiper-slide .one a .icon{
+        left: 15px;
+        top: 40px;
+        width: 56%;
+    }
+    
+}
+.brand{
+    position: relative;
+    background-color: var(--color-sub1);
+    padding: 123px 0 0 0;
+}
+.brand .list ul{
+    display: flex;
+    justify-content: space-between;
+}
+.brand .list ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--color-white);
+    box-shadow: 0 4px 4px 0 rgb(0, 0, 0, 0.1);
+    border-radius: 100%;
+    background-color: var(--color-white);
+    width: 404px;
+    height: 398px;
+    
+}
+.brand .list ul li .photo{
+    padding: 68px 0 0 0;
+}
+.brand .list ul li .icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.brand .list ul li .icon01,
+.brand .list ul li .icon02,
+.brand .list ul li .icon03{
+    width: 138px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0 0 36px 0; 
+}
+.brand .list ul li .icon01 img{
+    position: absolute;
+    left: 279px;
+    top: 249px;
+    width: 6%;
+    height: 22%;
+}
+.brand .list ul li .icon02 img{
+    position: absolute;
+    right: 684px;
+    top: 249px;
+    width: 8%;
+    height: 21%;
+}
+.brand .list ul li .icon03 img{
+    position: absolute;
+    right: 250px;
+    top: 249px;
+    width: 9%;
+    height: 21%;
+}
+.brand .list ul li .txt{
+    text-align: center;
+}
+.brand .list ul li .txt
+.brand .list ul li p{
+    color: var(--font-color-default);
+    line-height: var(--line-height-default);
+}
+.brand .list ul li p span{
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-default);
+    color: var(--font-color-tit);
+}
+@media screen and (max-width:1024px){
+    .brand .list ul li{
+        width: 320px;
+        height: 350px;
+        padding: 55px 0 0 0;
+    }
+    .brand .list ul li .icon01,
+    .brand .list ul li .icon02,
+    .brand .list ul li .icon03{
+        padding: 0 0 12px 0;
+    }
+    .brand .list ul li .icon01 img{
+        
+        width: 54%;
+        height: 85%;
+    }
 }
